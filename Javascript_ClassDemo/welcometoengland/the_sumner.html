@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stay</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/banners.js"></script>
+<script type="text/javascript" src="scripts/clickBanner.js"></script>
+<script type="text/javascript" src="scripts/accordion_menu.js"></script>
+<style>
+	.menu
+		{
+			display:none;
+			margin-left:15px;
+		}
+	#main
+		{
+			width:400px;
+		}
+	#right
+		{
+			width:550px;
+		}
+</style>
+
+</head>
+
+<body onLoad="changePic()">
+	<div id="page"><!-- page: start -->
+    	<p class="centerContent"><img src="images/welcometoengland_text.png" width="975" height="100" alt="Welcome to England" title="Welcome to England" /></p>
+    	<div id="container"><!-- container: start -->
+        	<div id="banner">
+            	<p class="centerContent">
+                	<a href="#" onClick="changeURL()">
+                    	<img src="images/london_banner_1.png" name="Banner" id="bannerImage" width="992" height="249">
+                    </a>
+                </p>
+            </div> 
+            <div id="menu"><!-- menu: start -->
+            	<p class="centerContent">
+                	<a href="index.html">Home</a> |
+                    <a href="london.html">London</a> |
+                    <a href="daytrips.html">Day Trips</a> |
+                    <a href="cost.html">Cost</a> |
+                    <a href="stay.html">Stay</a> |
+                    <a href="travel.html">Travel</a> |
+                    <a href="shop.html">Shop</a> |
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+        	<div id="main"><!-- main: start -->
+                <!-- Accordion menu gooes here -->
+                <h1>Places to Stay</h1>
+                <br>
+                <h4 class="centerContent">Content of places to stay from respective web sites.
+                <br>For Educational Purposes Only</h4>
+                <h4><a href="stay.html" onClick="return switchMenu('menu1')">Hotels</a></h4>
+                <span class="menu" id="menu1">
+                    <p style="text-indent:20px"><a href="thecromwell.html">Best Western - The Cromwell</a></p>
+                    <p style="text-indent:20px"><a href="express-southwark.html">Holiday Inn Express - Southwark</a></p>
+                    <p style="text-indent:20px"><a href="days-hydepark.html">Day's Inn - Hyde Park</a></p>
+                </span>
+                <br>
+                <h4><a href="stay.html" onClick="return switchMenu('menu2')">Hostels</a></h4>
+                <span class="menu" id="menu2">
+                    <p style="text-indent:20px"><a href="yha_oxford.html">YHA - Oxford Street</a></p>
+                    <p style="text-indent:20px"><a href="yha_central.html">YHA - Central</a></p>
+                    <p style="text-indent:20px"><a href="yha_stpancras.html">YHA - St. Pancras</a></p>
+                </span>
+                <br>
+                <h4><a href="stay.html" onClick="return switchMenu('menu3')">Bed & Breakfasts</a></h4>
+                <span class="menu" id="menu3">
+                    <p style="text-indent:20px"><a href="arran_house.html">Arran House</a></p>
+                    <p style="text-indent:20px"><a href="the_sumner.html">The Sumner</a></p>
+                    <p style="text-indent:20px"><a href="americana.html">Americana</a></p>
+                </span>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            <!-- overview of places to stay here -->
+            <h1>The Sumner </h1>
+<img src = "images/sumner.jpg" alt = "image of The Sumner" width = "320" height = "211" title = " The Sumner"/> <br/>
+<strong>Location:</strong>53-54 Upper Berkeley Street, London, W1H 7QR  <br/>
+<strong>Website:</strong> <a href = "http://www.visitlondon.com/where-to-stay/place/402475-sumner-hotel"> The Sumner</a> <br/><br/>
+
+The Sumner is a townhouse boutique hotel located in the heart of London.
+
+Combining contemporary luxurious design with warm, friendly and attentive service, The Sumner is truly a unique and special place in which to stay and enjoy London from.
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <div class="push"></div><!-- ends wrapper (created for sticky footer) -->
+    </div><!-- page: end -->
+    <div class="footer"><!-- footer: start -->
+    <script type="text/javascript" src="scripts/lastModified.js"></script>
+    </div><!-- footer: end -->
+
+</body>
+</html>

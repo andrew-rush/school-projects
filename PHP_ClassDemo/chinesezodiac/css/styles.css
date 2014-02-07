@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* CSS Document */
+
+		#main {
+            
+            width: 100%;
+            
+        }
+        
+        #container {
+            
+            margin: auto;
+            width:  960px;
+            
+        }
+        
+        #header {
+            
+            width: 950px;
+            text-align: center;
+            
+        }
+        
+        #buttonLinks {
+            
+            width: 260px;
+            float: left;
+            
+        }
+        
+        #textLinks {
+            
+            width: 950px;
+            height: 50px;
+            text-align: center;
+            font: normal 0.8em sans-serif;
+            
+        }
+        
+        a.text {
+            
+            padding: 10px;
+            
+        }
+        
+        #content {
+            
+            width: 600px;
+            float: left;
+            font: normal 1em sans-serif;
+            
+        }
+        
+        #footer {
+            
+            width: 850px;
+            clear: both;
+            text-align: center;
+            
+        }
+		
+		div.zodiac {
+			
+			float: left;
+			width: 120px;
+			margin: 10px;
+			border: thin #000 2px;
+			clear: none;
+		}
+		
+		h1, h2, h3, h4, h5 {
+			
+			margin: 10px 0;
+            font: bold  24px sans-serif;
+			
+		}
+		
+		p {
+			
+			margin: 10px 0;
+			
+		}

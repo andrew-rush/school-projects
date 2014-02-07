@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script>
+
+	var newText = 'This is the text added when you clicked the link';
+	
+	function addText(location) {
+		var myTag = document.createElement("p");
+		myTag.setAttribute("style", "text-align:center");
+		var myText = document.createTextNode(newText);
+		myTag.appendChild(myText);
+		var docElement = document.getElementById(location);
+		docElement.appendChild(myTag);
+	}
+
+</script>
+
+</head>
+
+<body>
+<p><a href="#" onClick="addText('addTextHere')">Add Text</a></p>
+<p id="addTextHere">New text will display here</p>
+<p>This origincal content stays static. It is moved by the additional content but otherwise unaffected.</p>
+</body>
+</html>

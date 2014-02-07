@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>London</title>
+<link href="css/styles.css"" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/londonTime.js"></script>
+<script type="text/javascript" src="scripts/banners.js"></script>
+<script type="text/javascript" src="scripts/clickBanner.js"></script>
+<script type="text/javascript" src="scripts/displaySelected.js"></script>
+<script type="text/javascript" src="scripts/attractions.js"></script>
+<script>
+	function addCookie(tag, value)
+	{
+		var expireDate = new Date;
+		var expireString = "";
+		expireDate.setTime( expireDate.getTime() + (1000 * 60 * 60 * 24 * 365) );
+		expireString = "expires " + expireDate.toGMTString();
+		document.cookie = tag + '=' + escape(value) + ";" + expireString + ";";
+	}
+	
+	function deleteCookie()
+	{
+		var time_in_past = 24 * 60 * 60 * 1000;
+		var expireDate = new Date();
+		expireDate.setTime(expireDate.getTime()-time_in_past);
+		document.cookie = "TravellerName=nothing; expires=" + expireDate.toGMTString();
+		document.getElementById("TravellerName").value = "";
+		for(i=0;i<Attractions.length;i++)
+		{
+			document.cookie = "Attr" + i.toString() + "=nothing; expires=" + expireDate.toGMTString();
+		}
+	}
+	
+	function getCookie(tag)
+	{
+		var value = null;
+		var myCookie = document.cookie + ";";
+		var findTag = tag + "=";
+		var endPos;
+		if(myCookie.length > 0)
+		{
+			//alert("Cookie has a value: " + myCookie);
+			var beginPos = myCookie.indexOf(findTag);
+			if(beginPos != -1)
+			{
+				//alert("Searching string beginning at position: " + beginPos);
+				beginPos += findTag.length;
+				endPos = myCookie.indexOf(";", beginPos);
+				
+				if(endPos == -1)
+				{
+					endPos = myCookie.length;
+				}
+				value = unescape(myCookie.substring(beginPos, endPos));
+			}
+		}
+		return value;
+	}
+	
+	function attractionArray(length)
+	{
+		var retval = new Array(length);
+		for(i=0;i<length;i++)
+			retval[i]=0;
+		return retval;
+	}
+	
+	function addAttractions(attraction, popup, cookie)
+	{
+		var retval = new Object();
+		retval.attractionName = attraction;
+		retval.popupName = popup;
+		retval.cookie = cookie;
+		return retval;
+	}
+		
+	function updateValues()
+	{
+		if(document.getElementById("TravellerName") != null &&
+		document.getElementById("TravellerName").value != "")
+		{
+			addCookie("TravellerName", document.getElementById("TravellerName").value);
+			var attractions = document.getElementById("Attractions").children;
+			for(i=0; i<12; i++){
+				if(attractions[i].children[0].value != null && attractions[i].children[0].value != "")
+				{
+					var key=attractions[i].children[0].name;
+					var val=attractions[i].children[0].checked;
+					//alert(key + " = " + val);
+					addCookie(key, val);
+				}
+			}
+		}
+	}
+	
+	
+	var total = 12;
+	var Attractions = attractionArray(total);
+	
+	Attractions[0] = new addAttractions("London Zoo", "LondonZoo", "Attraction1")
+	Attractions[1] = new addAttractions("Big Ben", "BigBen", "Attraction2")
+	Attractions[2] = new addAttractions("St. Paul's Cathedral", "StPauls", "Attraction3")
+	Attractions[3] = new addAttractions("Tower of London", "Tower", "Attraction4")
+	Attractions[4] = new addAttractions("British Museum", "BritishMuseum", "Attraction5")
+	Attractions[5] = new addAttractions("London Eye", "LondonEye", "Attraction6")
+	Attractions[6] = new addAttractions("London Aquarium", "LondonAquarium", "Attraction7")
+	Attractions[7] = new addAttractions("Westmister Abbey", "Westminster", "Attraction8")
+	Attractions[8] = new addAttractions("Thames Cruise", "RiverCruise", "Attraction9")
+	Attractions[9] = new addAttractions("Wellington Arch", "WellingtonArch", "Attraction10")
+	Attractions[10] = new addAttractions("Harrods", "Harrods", "Attraction11")
+	Attractions[11] = new addAttractions("Shopping", "Shopping", "Attraction12")
+	
+	
+
+</script>
+
+</head>
+
+<body onLoad="setInterval('londonTime()', 1000); changePic()">
+	<div id="page"><!-- page: start -->
+    	<p class="centerContent"><img src="images/welcometoengland_text.png" width="975" height="100" alt="Welcome to England" title="Welcome to England" /></p>
+    	<div id="container"><!-- container: start -->
+        	<div id="banner">
+            	<p class="centerContent">
+                	<a href="#" onClick="changeURL()">
+                    	<img src="images/london_banner_1.png" name="Banner" id="bannerImage" width="992" height="249">
+                    </a>
+                </p>
+            </div> 
+            <div id="menu"><!-- menu: start -->
+            	<p class="centerContent">
+                	<a href="index.html">Home</a> |
+                    <a href="london.html">London</a> |
+                    <a href="daytrips.html">Day Trips</a> |
+                    <a href="cost.html">Cost</a> |
+                    <a href="stay.html">Stay</a> |
+                    <a href="travel.html">Travel</a> |
+                    <a href="shop.html">Shop</a> |
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+        	<div id="left">
+            	
+            	<script>
+                	var cookieValue = "";
+					cookieValue = getCookie("TravellerName");
+					if(cookieValue != null)
+					{
+						document.write("<table width+\"160px\">");
+						document.write("<tr><td>Attraction Links for</td></tr>");
+						document.write("<tr><td>" + cookieValue + "</td></tr>");
+						document.write("</table>");
+					} 
+					else
+					{
+						document.write("<p>&nbsp;</p>");
+					}
+					
+					for(i=0; i < total; i++)
+					{
+						cookieValue = "";
+						//alert(Attractions[i].cookie);
+						cookieValue = getCookie(Attractions[i].cookie);
+						if(cookieValue != null)
+						{
+							if(cookieValue == "true")
+							{
+								document.write("<p class=\"links\"><a href=\"#\" onClick=" + Attractions[i].popupName + "()>" + Attractions[i].attractionName + "</a></p>");
+							}
+						}
+					}
+					
+					function showForm()
+					{
+						document.getElementById("editform").style.display = "block";
+						initializeValues();
+					}
+					
+					function initializeValues()
+					{
+						var cookieValue = "";
+						
+						cookieValue = getCookie("TravellerName");
+						if(cookieValue != null)
+						{
+							document.getElementById("TravellerName").value = cookieValue;
+						}
+						
+						var attractions = document.getElementById("Attractions").children;
+						
+						var i = attractions.length;
+						while(i--)
+						{
+							cookieValue = "";
+							cookieValue = getCookie(attractions[i].children[0].name);
+							if(cookieValue != null)
+							{
+								if(cookieValue == "true")
+								{
+									attractions[i].children[0].checked = true;
+								}
+								if(cookieValue == "false")
+								{
+									attractions[i].children[0].checked = false;
+								}
+							}
+						}
+					}
+                </script>
+                <p class="centerContent">If you would like to change your selected attactions, please click the following link:</p>
+                <p class="centerContent"><a href="JavaScript: showForm()">Select Attraction</a></p>
+            </div><!-- end left -->
+        	<div id="Lmain"><!-- main: start -->
+            	<h3 class="centerContent">Welcome to the London Attractions Page</h3>
+                <p>As a member of the International Travel Club, you may select the attractions you would like to visit and we will keep you updated with travel tips. When you click the London tab, you will only see links to attractions you would like to visit</p>
+            	<form id="editform" name="AttractionSelector" id="AttractionSelector" onSubmit="return updateValues()" onReset="return deleteCookie()" style="display:none">
+                	<p>Please enter your full name and check the attractions you would like to visit</p>
+                    <p>Click Select Attractions and links to the selected attractions will display each time you visit the page.</p>
+                	<p class="centerContent">
+                    	<ul>
+                        	<li>
+                            	Full name:
+                                <input type="text" name="TravellerName" id="TravellerName">
+                            </li>
+                        </ul>
+                        <ul id="Attractions">
+                        	<li><input type="checkbox" class="Attraction" name="Attraction1" id="Attraction1">London Zoo</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction2" id="Attraction2">Big Ben</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction3" id="Attraction1">St. Paul's Cathedral</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction4" id="Attraction4">Tower of London</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction5" id="Attraction5">British Museum</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction6" id="Attraction6">London Eye</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction7" id="Attraction7">London Aquarium</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction8" id="Attraction8">Westminster Abbey</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction9" id="Attraction9">Thames River Cruise</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction10" id="Attraction10">Wellington Arch</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction11" id="Attraction11">Harrods</li>
+                            <li><input type="checkbox" class="Attraction" name="Attraction12" id="Attraction12">Shopping</li>
+                        </ul>
+                        <input type="submit" id="Selections" name="Selections" value="Select Attractions">&nbsp;&nbsp;
+                        <input type="reset" name="Reset" value="Clear Selections">
+                      </p>    	
+                </form>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            	<div id="londonTime">
+                    <form name="Lclock" id="Lclock" action="#">
+                        <p>
+                            <input class="londonTime" type="text" name="Ltime" id= "Ltime" size="50" />
+                        </p>
+                    </form>
+            	</div>
+                <div id="selectImages">
+                	<form name="Attractions" id="attractions">
+                    	<p>
+                        	<h1>Select attraction...</h1>
+                        </p>
+                        <p>
+                        	<select name="attractionList" size="1" onChange="displaySelected()">
+                                <option value="0">Select an Attraction</option>
+                                <option value="1">London Zoo</option>
+                                <option value="2">Saint Paul's Cathedral</option>
+                                <option value="3">Tower of London</option>
+                                <option value="4">British Museum</option>
+                                <option value="5">London Eye</option>
+                                <option value="6">London Aquarium</option>
+                                <option value="7">Westminster Abbey</option>
+                                <option value="8">Themes River Cruise</option>
+                                <option value="9">All Hallows Church</option>
+                            </select>
+                        </p>
+                        <p>
+                        	<img src="../welcometoengland/images/select/placeholder.jpg" name="attractionPicture" />
+                        </p>
+                        <p>
+                        	<textarea cols="30" rows="10" wrap="virtual" name="attractionDescription">When you choose an item from the list, a complete description of the item and a price will appear in this window.</textarea>
+                        </p>
+                    </form>
+                </div>
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <div class="push"></div><!-- ends wrapper (created for sticky footer) -->
+    </div><!-- page: end -->
+    <div class="footer"><!-- footer: start -->
+    <script type="text/javascript" src="scripts/lastModified.js"></script>
+    </div><!-- footer: end -->
+
+</body>
+</html>

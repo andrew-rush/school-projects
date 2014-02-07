@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Andrew's JavaScript Demo ~ Date & Time</title>
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Iceland|Special+Elite' rel='stylesheet' type='text/css'>
+<script src="scripts/last_update.js"></script>
+<script src="scripts/time.js"></script>
+<script src="scripts/calcDays.js"></script>
+<script src="scripts/banner.js"></script>
+<script src="scripts/get_set_cookie.js"></script>
+<script src="scripts/displaySelected.js"></script>
+<script src="scripts/cookieBanner.js"></script>
+<script src="scripts/setBackground.js"></script>
+<script src="scripts/openRick.js"></script>
+</head>
+
+<body onLoad="setInterval('theTime()', 1000); changePic(); setCookieBanner(); setBackground()">
+	<div id="page"><!-- page: start -->
+    	<div id="container"><!-- container: start -->
+            <div id="banner" class="centerContent">
+            	<img src="images/header.png" alt="Andrew's JavaScript Demo" class="centerContent" />
+            	<img src="images/banners/493049d121ad78baade552c415d94377ed5.gif" id="cookieBanner" name="cookieBanner">
+            </div>
+        	<div id="menu" class="centerContent"><!-- menu: start -->
+            	<a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+            <div id="main"><!-- main: start -->
+            	<p class="bodyText">I know, i know. You probably have a clock on your computer, blinking away in the upper right hand corner of your monitor. But, on the off chance you do not, or if you have the clock set to display 24-hour time and can never figure our how to translate it to normal time, the time right now is:
+                </p>
+            	<form action="#" name="clock" id="clock">
+                	<input type="datetime" name="time">
+                </form>
+                <p class="bodyText">OK, that wasn't so impressive. But it was a project parameter, so it is what it is. For something a little trickier, how about we calulate the number of days between two dates? Please enter the dates in either mm/dd/yyyy (e.g. 4/3/1998) or Month dd, yyyy (e.g. June 13, 2012) format.</p> 
+            	<form action="#" name="dateCalc" id="dateCalc">
+                	<label for="date1">First Date: </label>
+                    <input type="datetime" name="date1">
+                    <label for="date2">Second Date: </label>
+                    <input type="datetime" name="date2">
+                    <button type="submit" onClick="calcDays(document.dateCalc.date1.value, document.dateCalc.date2.value)">Calculate it!</button>
+                </form>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            	<div id="badge">
+                    <h2 class="centerContent">Made With</h2>
+                    <p class="centerContent">
+                        <a href="#" onClick="changeURL()">
+                            <img src="images/html5.png" name="Banner" id="bannerImage" width="30%">
+                        </a>
+                    </p>
+                </div><!-- badge: end --><div id="selectFormDiv">
+                	<p>
+                        <form name="backgroundForm">
+                            <select name="backgroundSelect" onChange="displaySelected()">
+                                <option value="0">Choose Background</option>
+                                <option value="1">Desert</option>
+                                <option value="2">Mountain</option>
+                                <option value="3">Ocean</option>
+                                <option value="4">Road</option>
+                            </select>
+                        </form>
+                    </p>
+                </div><!-- end selectFormDiv --> 
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <!--<div class="push"></div>ends wrapper (created for sticky footer) -->
+        <div id="footer"><!-- footer: start -->
+            <div id="menu" class="centerContent"><!-- menu: start -->
+                <a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+                <p class="author">this site &copy; a maine guy studio. Last updated on <script>document.write(getLastUpdated());</script></p>
+                <p class = "reallySmallText"><a href="#" onClick="return openRick()">click me</a></p>
+            </div><!-- menu: end -->
+        </div><!-- footer: end -->
+    </div><!-- page: end -->
+</body>
+</html>

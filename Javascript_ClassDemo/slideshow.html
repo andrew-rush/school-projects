@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Andrew's JavaScript Demo ~ Slideshow</title>
+
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Iceland|Special+Elite' rel='stylesheet' type='text/css'>
+<link href="css/slideshow.css" rel="stylesheet" type="text/css">
+<script src="scripts/last_update.js"></script>
+<script src="scripts/banner.js"></script>
+<script src="scripts/slideshow.js"></script>
+<script src="scripts/get_set_cookie.js"></script>
+<script src="scripts/displaySelected.js"></script>
+<script src="scripts/cookieBanner.js"></script>
+<script src="scripts/setBackground.js"></script>
+<script src="scripts/openRick.js"></script>
+
+</head>
+
+<body onLoad="changePic(); setCookieBanner(); setBackground()">
+	<div id="page"><!-- page: start -->
+    	<div id="container"><!-- container: start -->
+            <div id="banner" class="centerContent">
+            	<img src="images/header.png" alt="Andrew's JavaScript Demo" class="centerContent" />
+            	<img src="images/banners/493049d121ad78baade552c415d94377ed5.gif" id="cookieBanner" name="cookieBanner">
+            </div>
+        	<div id="menu" class="centerContent"><!-- menu: start -->
+            	<a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+            <div id="main"><!-- main: start -->
+            	<div id="slideshow">
+                    <div id="d1">
+                        <div class="slide">
+                            <img src="images/slideshow/Kern-River.jpg" alt="The Kern River in California's Sierra Nevada mountains." name="slideImage" />
+                            <div class="caption">
+                                <p>The Kern River in California's Sierra Nevada mountains.</p>
+                            </div><!-- end caption -->
+                        </div><!-- end slide -->
+                    </div><!-- end d1 -->
+                    <div id="d2">
+                        <div class="slide">
+                            <img src="images/slideshow/Sierra-4.jpg" alt="Michael enjoying a warm afternoon on the Kern." name="slideImage" />
+                            <div class="caption">
+                                <p>Michael enjoying a warm afternoon on the Kern.</p>
+                            </div>
+                        </div><!-- end slide -->
+                    </div><!-- end d2 -->
+                    <div id="d3">
+                        <div class="slide">
+                            <img src="images/slideshow/Sierra-8.jpg" alt="Such a beautiful river!" name="slideImage" />
+                            <div class="caption">
+                                <p>Such a beautiful river!</p>
+                            </div>
+                        </div><!-- end slide -->
+                    </div><!-- end d3 -->
+                    <div id="d4">
+                        <div class="slide">
+                            <img src="images/slideshow/Sierra-10.jpg" alt="Peppermint Creek" name="slideImage" />
+                            <div class="caption">
+                                <p>Peppermint Creek</p>
+                            </div>
+                        </div><!-- end slide -->
+                    </div><!-- end d4 -->
+                    <div id="d5">
+                        <div class="slide">
+                            <img src="images/slideshow/Sierra-5.jpg" alt="Sunset in the Southern Sierra Mountains." name="slideImage" />
+                            <div class="caption">
+                                <p>Sunset in the Southern Sierra Mountains.</p>
+                            </div>
+                        </div><!-- end slide -->
+                    </div>
+                    <div class="formHolder">
+                        <form>
+                            <input class="slideButton" type="button" value="<<" name="button" onClick="firstDiv()">
+                            <input class="slideButton" type="button" value="<" name="button" onClick="prevDiv()">
+                            <input class="slideButton" type="button" value=">" name="button" onClick="nextDiv()">
+                            <input class="slideButton" type="button" value=">>" name="button" onClick="lastDiv()">
+                        </form>
+                    </div><!-- end formholder -->
+                </div><!-- end slideshow -->
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            	<div id="badge">
+                    <h2 class="centerContent">Made With</h2>
+                    <p class="centerContent">
+                        <a href="#" onClick="changeURL()">
+                            <img src="images/html5.png" name="Banner" id="bannerImage" width="30%">
+                        </a>
+                    </p>
+                </div><!-- badge: end --><div id="selectFormDiv">
+                	<p>
+                        <form name="backgroundForm">
+                            <select name="backgroundSelect" onChange="displaySelected()">
+                                <option value="0">Choose Background</option>
+                                <option value="1">Desert</option>
+                                <option value="2">Grass</option>
+                                <option value="3">Snow</option>
+                            </select>
+                        </form>
+                    </p>
+                </div><!-- end selectFormDiv --> 
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <!--<div class="push"></div>ends wrapper (created for sticky footer) -->
+        <div id="footer"><!-- footer: start -->
+            <div id="menu" class="centerContent"><!-- menu: start -->
+                <a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+                <p class="author">this site &copy; a maine guy studio. Last updated on <script>document.write(getLastUpdated());</script></p>
+                <p class = "reallySmallText"><a href="#" onClick="return openRick()">click me</a></p>
+            </div><!-- menu: end -->
+        </div><!-- footer: end -->
+    </div><!-- page: end -->
+</body>
+</html>

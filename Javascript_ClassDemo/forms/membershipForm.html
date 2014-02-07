@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<style>
+    label, textarea, .blockForm
+    {
+        display:block;
+        line-height:1.5em;
+    }
+</style>    
+
+<script>
+
+function validateForm() {
+	//alert("Validating first");
+	if(document.mForm.fName.value == "") 
+	{
+		alert("Please enter your first name.");
+		document.mForm.fName.focus();
+		return false;
+	} else {
+		//alert("Validating last");
+		if(document.mForm.lName.value == "") 
+		{
+			alert("Please enter your last name");
+			document.mForm.lName.focus();
+			return false;
+		} else {
+			//alert("Validating email");
+			if(document.mForm.email.value == "") 
+			{
+				alert("Please enter your an email address.");
+				document.mForm.email.focus();
+				return false;
+			} else {
+				//alert("Validating bday");
+				var regex = /^[0-9]{2}-[0-9]{2}-[0-9]{4}$/;
+				if( (document.mForm.bDay.value == '') || ( !document.mForm.bDay.value.match(regex) ) ) 
+				{
+					alert("Please enter a date in MM-DD-YYYY format.");
+					document.mForm.bDay.value="";
+					document.mForm.bDay.focus();
+					return false;
+				} else {
+					//alert("Validating age block");
+					var age=Array();
+					if( 
+						(document.mForm.age[0].checked == false) &&
+						(document.mForm.age[1].checked == false) &&
+						(document.mForm.age[2].checked == false) &&
+						(document.mForm.age[3].checked == false) &&
+						(document.mForm.age[4].checked == false) && 
+						(document.mForm.age[5].checked == false) && 
+						(document.mForm.age[6].checked == false) ) 
+					{
+						alert("Please select an age range!");
+						document.mForm.age.value = "";
+						return false;
+					} else {
+						//alert("Validating country");
+						if( 
+							(document.mForm.England.checked == false) && 
+							(document.mForm.Ireland.checked == false) && 
+							(document.mForm.Scotland.checked == false) && 
+							(document.mForm.Norway.checked == false) && 
+							(document.mForm.Sweden.checked == false) && 
+							(document.mForm.Finland.checked == false) && 
+							(document.mForm.Germany.checked == false) && 
+							(document.mForm.Netherland.checked == false) && 
+							(document.mForm.Belgium.checked == false) && 
+							(document.mForm.Spain.checked == false) && 
+							(document.mForm.Switzerland.checked == false) && 
+							(document.mForm.Italy.checked == false) && 
+							(document.mForm.Austria.checked == false) ) 
+						{
+							alert("You must select at least one country.");
+							return false;
+						} // end country
+					} // end else for age
+				} // end else for bDay
+			} // end else for email
+		} // end else for lName
+	} // end else for fName
+	return true;
+} // end function
+    
+</script>
+    
+</head>
+
+<body>
+    
+    <h1>Membership Form</h1>
+    <p>Completing this form will help me determine places my visitors want to visit. Using this information i can continue to provide my visitors with content they find useful!</p>
+    <p>All fields are required.</p>
+    <!---->
+    <form name="mForm" action="mailto:andrew.rush@maine.edu" method="post" enctype="text/plain" onSubmit="return validateMembershipForm()">
+        <fieldset>
+            <label for="fName">First Name</label>
+            <input type="text" name="fName" id="fName" size="25" placeholder="First Name">
+            <label for="lName">Last Name</label>
+            <input type="text" name="lName" id="lName" size="25" placeholder="Last Name">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" size="40" placeholder="Email">
+            <label for="birthday">Date of Birth</label>
+            <input type="text" name="birthday" id="bDay" size="15" placeholder="mm-dd-yyyy">            
+        </fieldset>
+        <fieldset><label for="age">Age Range:</label>
+            <span class="blockForm"><input type="radio" name="age" id="under12" value="Under 12">Under 12</span>
+            <span class="blockForm"><input type="radio" name="age" id="1218" value="12-18">12-18</span>
+            <span class="blockForm"><input type="radio" name="age" id="1930" value="19-30">19-30</span>  
+            <span class="blockForm"><input type="radio" name="age" id="3140" value="31-40">31-40</span>
+            <span class="blockForm"><input type="radio" name="age" id="4150" value="41-50">41-50</span>
+            <span class="blockForm"><input type="radio" name="age" id="5160" value="51-60">51-60</span>
+            <span class="blockForm"><input type="radio" name="age" id="over60" value="Over 60">Over 60</span>
+        </fieldset>
+        <fieldset>
+            <span class="blockForm"><input type="checkbox" name="England" value="England">England</span>
+            <span class="blockForm"><input type="checkbox" name="Ireland" value="England">Ireland</span>
+            <span class="blockForm"><input type="checkbox" name="Scotland" value="England">Scotland</span>
+            <span class="blockForm"><input type="checkbox" name="Norway" value="England">Norway</span>
+            <span class="blockForm"><input type="checkbox" name="Sweden" value="England">Sweden</span>
+            <span class="blockForm"><input type="checkbox" name="Finland" value="Finland">Finland</span>
+            <span class="blockForm"><input type="checkbox" name="Germany" value="Germany">Germany</span>
+            <span class="blockForm"><input type="checkbox" name="Netherland" value="Netherland">Netherland</span>
+            <span class="blockForm"><input type="checkbox" name="Belgium" value="Belgium">Belgium</span>
+            <span class="blockForm"><input type="checkbox" name="Spain" value="Spain">Spain</span>
+            <span class="blockForm"><input type="checkbox" name="Switzerland" value="Switzerland">Switzerland</span>
+            <span class="blockForm"><input type="checkbox" name="Italy" value="Italy">Italy</span>
+            <span class="blockForm"><input type="checkbox" name="Austria" value="Austria">Austria</span>
+        </fieldset>
+        
+        <input type="submit" value="Send Form">
+        <input type="reset" value="Clear Form">
+    </form>
+    
+</body>
+</html>

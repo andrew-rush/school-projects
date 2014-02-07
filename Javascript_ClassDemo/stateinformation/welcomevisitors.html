@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script>
+	
+	function addCookie(tag, value)
+	{
+		var expireDate = new Date;
+		var expireString = "";
+		expireDate.setTime( expireDate.getTime() + (1000 * 60 * 60 * 24 * 365) );
+		expireString = "expires " + expireDate.toGMTString();
+		document.cookie = tag + '=' + escape(value) + ";" + expireString + ";";
+	}
+	
+	function getCookie(tag)
+	{
+		var value = null;
+		var myCookie = document.cookie + ";";
+		var findTag = tag + "=";
+		var endPos;
+		if(myCookie.length > 0)
+		{
+			//alert("Cookie has a value: " + myCookie);
+			var beginPos = myCookie.indexOf(findTag);
+			if(beginPos != -1)
+			{
+				//alert("Searching string beginning at position: " + beginPos);
+				beginPos += findTag.length;
+				endPos = myCookie.indexOf(";", beginPos);
+				
+				if(endPos == -1)
+				{
+					endPos = myCookie.length;
+					value = unescape(myCookie.substring(beginPos, endPos));
+					alert("End: " + endPos + "Value: " + value);
+				}
+			}
+		}
+		return value;
+	}
+		
+	
+	function checkVisitor()
+	{
+		var username = getCookie('name');
+		//alert("Hello, " + username);
+		if(username != null)
+		{
+			alert("Welcome back to the website, " + username);
+		} 
+		else 
+		{
+			username = prompt("Please enter your name");
+			if( (username != null) && (username != "") )
+			{
+				addCookie("name", username);
+			}
+		}
+	}
+	
+	function getTheCookie(valueName)
+	{
+		var theCookie = document.cookie;
+		var cookieArray = theCookie.split(";");
+		for(i=0; i<cookieArray.length; i++)
+		{
+			key = cookieArray[i].split("=")[0];
+			value = cookieArray[i].split("=")[1];
+			if(key == valueName)
+			{
+				value = unescape(value);
+			}
+		}
+	}
+	
+</script>
+
+</head>
+
+<body onLoad="checkVisitor()">
+</body>
+</html>

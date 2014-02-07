@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* reset padding and margin values in all browsers */
+* 
+	{
+		margin:0;
+		padding:0;
+	}
+	
+body
+	{
+		height:100%;
+	}
+
+html { 
+  background: url(../images/backgrounds/road.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+	
+#page
+	{
+		width:1000px;
+		min-height:80%;
+		height:auto !important;
+		height:80%;
+		margin:0 auto -32px; /* must add +7 from the size of the footer */
+		background: rgba(255,255,255,0.6);
+		padding-top:10px; /* for header image */
+		border-bottom-right-radius:50px;
+		border-bottom-left-radius:50px;
+	}
+
+#menu, #footermenu
+	{
+		padding-top:10px;
+		font-size:24px;
+		padding-bottom:5px;
+	}
+	
+#footermenu
+	{
+		padding:none;
+		margin:none;
+		position:relative;
+		top: 60px;
+	}
+
+#content
+	{
+		margin-top:15px;
+		width:978px;
+		padding-left:10px;
+		padding-right:10px;
+		height:100%;
+		min-height:425px;
+		clear:both;
+	}
+	
+#main
+	{
+		width:530px;
+		margin:20px;
+		margin-left:25px;
+		padding:10px;
+		padding-top:20px;
+		padding-right:50px;
+		float:left;
+		max-height:320px;
+		overflow:auto;
+	}
+
+#right
+	{
+		width:270px;
+		margin:20px;
+		margin-right:35px;
+		padding-top:20px;
+		padding-left:10px;
+		float:right;
+	}
+	
+#footer
+	{
+		width:1000px;
+		margin:auto;
+		margin-bottom:50px;
+		line-height:20px;
+		clear:both;
+	}
+
+#clock
+	{
+		margin:25px;
+	}
+
+#selectFormDiv
+	{
+		margin-top:90px;
+	}
+	
+#accordianMenu
+	{
+		width:170px;
+		float:left;
+		margin:0px;
+	}
+	
+#bookHolder
+	{
+		width:320px;
+		float:left;
+	}
+	
+#book
+	{
+		margin:0px;
+		padding:10px;
+	}
+	
+#book1, #book2, #book3, #book4, #book5, #book6, #book7, #book8, #book9
+	{
+		float:right;
+		margin:0px;
+		padding:10px;
+		display:none;
+	}
+	
+#book img, #book0 img, #book1 img, #book2 img, #book3 img, #book4 img, #book5 img, #book6 img, #book7 img, #book8 img, #book9 img
+	{
+		float:right;
+		padding: 10px;
+		max-width:120px;
+	}
+	
+.author
+	{
+		height:15px;
+		line-height:15px;
+		text-align:center;
+		font:12px 'Special Elite', cursive;
+		position:relative;
+		top:-40px;
+	}
+	
+.push
+	{
+		clear:both;
+		height:130px;
+	}
+	
+.navItem
+	{
+		height:35px;
+		width:175px;
+		float:left;
+		margin:23px 1px;
+		padding:10px;
+	}
+	
+.bodyText
+	{
+		font-family: 'Iceland', serif;
+		font-size:1em;
+		color:black;
+		line-height:2.5em;
+		margin-bottom:20px;
+	}
+	
+.centerContent
+	{
+		text-align:center;
+	}
+	
+.reallySmallText
+	{
+		font-size:10px;
+	}
+#menu a:link
+	{
+		font-family: 'Special Elite', cursive;
+		font-size:.7em;
+		color:black;
+		text-shadow:-5px 5px 8px #666;
+		
+		/* hover off */
+		transition: all .5s ease-out 0s;
+		-webkit-transition: all .5s ease-out 0s;
+		-moz-transition: all .5s ease-out 0s;
+	}
+
+#menu a:visited
+	{
+		color:black;
+	}
+	
+#menu a:hover
+	{
+		color:red;
+		font-size:1em;
+		text-shadow:-5px 5px 15px #666;
+		transition: all .5s ease-in 0;
+		-webkit-transition: all .5s ease-in 0;
+		-moz-transition: all .5s ease-in 0;
+	}
+	
+#footermenu a:link
+	{
+		font-family: 'Special Elite', cursive;
+		font-size:.7em;
+		color:black;
+		text-shadow:none;
+		
+		/* hover off */
+		transition: all .5s ease-out 0s;
+		-webkit-transition: all .5s ease-out 0s;
+		-moz-transition: all .5s ease-out 0s;
+	}
+
+#footermenu a:visited
+	{
+		color:black;
+	}
+	
+#footermenu a:hover
+	{
+		color:red;
+		font-size:1em;
+		transition: all .5s ease-in 0;
+		-webkit-transition: all .5s ease-in 0;
+		-moz-transition: all .5s ease-in 0;
+	}
+	
+.cartText, .cartText a:link
+	{
+		font-family: 'Iceland', serif;
+		font-size:1em;
+		color:black;
+		line-height:1.25em;
+		margin:0px;
+		margin-bottom:20px;
+		text-decoration:none;
+		text-shadow:none;
+	}
+	
+.cartText a:hover
+	{
+		color:red;
+		transition:none;
+		text-shadow:none;
+	}
+	
+.addToCart
+	{
+		position:relative;
+		left: 25px;
+	}
+
+label, input, button, textarea, select
+	{
+		display:block;
+		margin:10px;
+		width:430px;
+	}
+	
+#selectFormDiv select
+	{
+		width:250px;
+	}
+
+label
+	{
+		border:1px solid black;
+		background:#CCC;
+		padding:none;
+		padding-left:25px;
+	}
+
+fieldset
+	{
+		background:rgba(187,187,187,0.4);
+		border:1px solid black;
+	}
+
+legend
+	{
+		background:#CCC;
+		border:1px solid black;
+		text-align:left;
+		padding:0 1em;
+	}
+	
+input, textarea
+	{
+		
+		font-family: 'Iceland', serif;
+	}
+	
+li
+	{
+		list-style:none;
+	}
+	
+hr
+	{
+		width: 45%;
+		margin-bottom: 2em;
+	}
+	
+.shadow {
+-moz-box-shadow: 0 0 30px 5px #999;
+-webkit-box-shadow: 0 0 30px 5px #999;
+}
+		

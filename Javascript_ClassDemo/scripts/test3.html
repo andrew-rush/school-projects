@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript">
+function closeWin()
+{
+myWindow.close();
+}
+
+function openWin()
+{
+	myWindow=window.open('','myWindow','width=200');	
+	myWindow.document.write("This is 'myWindow'");
+}
+</script>
+</head>
+<body onLoad="openWin()">
+
+<script type="text/javascript">	
+	
+</script>
+
+<input type="button" value="Close 'myWindow'" onclick="closeWin()" />
+
+</body>
+</html>

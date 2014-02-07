@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script>
+	
+	function validateForm() {
+		// get the all the 'countries' checkbox objects 
+		// from the form into one variable
+		var countries_elements=document.getElementsByName('countries');
+		// storage variable to hold the 'countries' 
+		// checkbox objects that have been checked
+		var countries = new Array();
+		// set our error flag
+		var errFlag = false;
+		
+		// loop through the 'countries' obects
+		count = countries_elements.length;
+		for(i=0; i < countries_elements.length; i++){
+			// grab each 'countries' object
+			var element = countries_elements[i];
+			if(element.checked) { 	// if the object is checked
+									// push it onto the storage variable
+				countries.push(element.value);
+			}
+		}
+		
+		// examine the storage variable to make sure 
+		// something was checked, if not then errorMsg
+		if(countries.length < 1){
+			errorMsg = 'Countries: please select a country';
+			errFlag = true;
+		} else {
+			var selected_countries = "";
+			for(i=0; i < countries.length; i++){
+				selected_countries += countries[i] + ' ';
+			}
+		}
+		
+		
+		if(errFlag) {
+			alert(errorMsg);
+		} else {
+			alert(selected_countries);
+		}
+	}
+
+</script>
+
+</head>
+
+<body>
+
+	<form name="demo1">
+    	<p>countries i'd like to visit</p>
+        <p><label for="check1"><input type="checkbox" name="countries" id="check1" value="Morocco">Morocco</label></p>
+        <p><label for="check2"><input type="checkbox" name="countries" id="check2" value="Thailand">Thailand</label></p>
+        <p><label for="check3"><input type="checkbox" name="countries" id="check3" value="Columbia">Columbia</label></p>
+        <p><input type="button" name="submit" id="btn_submit" value="Submit" onClick="validateForm()"></p>
+    </form>
+</body>
+</html>

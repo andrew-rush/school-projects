@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Andrew's JavaScript Demo ~ Home</title>
+
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Iceland|Special+Elite' rel='stylesheet' type='text/css'>
+<script src="scripts/preload.js"></script>
+<script src="scripts/last_update.js"></script>
+<script src="scripts/banner.js"></script>
+<script src="scripts/get_set_cookie.js"></script>
+<script src="scripts/displaySelected.js"></script>
+<script src="scripts/cookieBanner.js"></script>
+<script src="scripts/setBackground.js"></script>
+<script src="scripts/openRick.js"></script>
+
+</head>
+
+<body onLoad="preload(); changePic(); setCookieBanner(); setBackground()">
+	<div id="page">
+    	<div id="container">
+            <div id="banner" class="centerContent">
+            	<img src="images/header.png" alt="Andrew's JavaScript Demo" class="centerContent" />
+            	<img src="images/banners/493049d121ad78baade552c415d94377ed5.gif" id="cookieBanner" name="cookieBanner">
+            </div>
+        	<div id="menu" class="centerContent"><!-- menu: start -->
+            	<a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content">
+            <div id="main">
+            	<p class="bodyText">JavaScript is an easy to learn, lightwight interpreted programming language. It comes with most web browsers, even on mobile devices. Because all modern browsers support JavaScript, it can be inserted into web pages. Once inserted, the code allows the developer to manipulate various sorts of data - whether written into the page, pulled from the internet or sent from user input - and write that manipulated date into the web page as dynamically updated information.</p>
+                <p class="bodyText">This class is about exploring what can be done JavaScript, HTML, and Cascading Style Sheets are combined. Come with me and explore what can be done when these technologies are combined! We will focus, as much as possible within the parameters of the class, on using JavaScript to where appropriate, with the idea that sometimes other technologies are more suited to a gioven task. In other words, just cuz ya can do it with JavaScript that don't mean ya should do it with JavaScript!</p>
+            </div><!-- main: end -->
+            <div id="right">
+            	<div id="badge">
+                    <h2 class="centerContent">Made With</h2>
+                    <p class="centerContent">
+                        <a href="#" onClick="changeURL()">
+                            <img src="images/html5.png" name="Banner" id="bannerImage" width="30%">
+                        </a>
+                    </p>
+                </div><!-- badge: end -->
+                <div id="selectFormDiv">
+                	<p>
+                        <form name="backgroundForm">
+                            <select name="backgroundSelect" onChange="displaySelected()">
+                                <option value="0">Choose Background</option>
+                                <option value="1">Desert</option>
+                                <option value="2">Mountain</option>
+                                <option value="3">Ocean</option>
+                                <option value="4">Road</option>
+                            </select>
+                        </form>
+                    </p>
+                </div><!-- end selectFormDiv -->  
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <!--<div class="push"></div>ends wrapper (created for sticky footer) -->
+         <div id="footer"><!-- footer: start -->
+            <div id="menu" class="centerContent"><!-- menu: start -->
+                <a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+                <p class="author">this site &copy; a maine guy studio. Last updated on <script>document.write(getLastUpdated());</script></p>
+                <p class = "reallySmallText"><a href="#" onClick="return openRick()">click me</a></p>
+            </div><!-- menu: end -->
+        </div><!-- footer: end -->
+    </div><!-- page: end -->
+</body>
+</html>

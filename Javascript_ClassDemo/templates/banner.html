@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Banner</title>
+<script type="text/javascript">
+	myBanners = new Array('../welcometoengland/images/london_banner_1.png',
+							'../welcometoengland/images/view_from_stpauls.png',
+							'../welcometoengland/images/london_night.png');
+	picCounter = 0;
+	
+	function changePic() {
+		
+		if(picCounter == myBanners.length) {
+			
+			picCounter = 0;
+			
+		}
+		
+		document.Banner.src = myBanners[picCounter];
+		picCounter++;
+		setTimeout("changePic()", 3000);
+	}
+	
+</script>
+</head>
+
+<body onLoad="changePic()">
+	<p style="text-align:center"><img src="../welcometoengland/images/london_banner_1.png" name="Banner" id="banner"></p>
+</body>
+</html>

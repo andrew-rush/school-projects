@@ -1,0 +1,6 @@
+"Andrew Rush", "me@home.net"
+"Bob Weir", "bob@home.net"
+"David Crosby", "cros@home.net"
+"Jerry Garcia", "jerry@home.net"
+"Phil Lesh", "phil@home.net"
+"Theresa Rush", "her@home.net"

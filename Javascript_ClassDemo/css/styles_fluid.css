@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* reset padding and margin values in all browsers */
+* 
+	{
+		margin:0;
+		padding:0;
+	}
+	
+html, body
+	{
+		height:100%;
+		background-color:#FF0;
+	}
+
+/**/div 
+	{
+		border: solid thin black;
+	}
+	
+#page
+	{
+		width:90%;
+		min-height:80%;
+		height:auto !important;
+		height:80%;
+		margin:0 auto; /* must add +7 from the size of the footer */
+		background-color:#FFF;
+		padding-top:.01%%; /* for header image */
+	}
+
+#menu
+	{
+		padding-top:.01%;
+		font-size:.024%;
+		padding-bottom:.005%;
+	}
+
+#content
+	{
+		margin-top:.015%;
+		width:97.8%;
+		padding-left:.01%;
+		padding-right:.01%;
+		height:100%;
+		clear:both;
+	}
+	
+#main
+	{
+		width:48%;
+		margin:.02%;
+		margin-left:.025%;
+		padding:.01%;
+		padding-top:.02%;
+		padding-right:.05%;
+		float:left;
+		max-height:290px;
+		overflow:auto;
+	}
+
+#right
+	{
+		width:21%;
+		margin:.02%;
+		margin-right:.035%;
+		padding-top:.02%;
+		padding-left:.01%;
+		float:right;
+	}
+	
+#footer
+	{
+		height:.02%;
+		width:100%;
+		margin:auto;
+		line-height:.02%;
+		clear:both;
+	}
+	
+#author
+	{
+		width:100%;
+		height:15px;
+		line-height:15px;
+		text-align:center;
+		font:.75em 'Special Elite', cursive;
+	}
+
+#clock
+	{
+		margin:.025;
+	}
+	
+.push
+	{
+		clear:both;
+		height:14%;
+	}
+	
+.navItem
+	{
+		height:25px;
+		width:13%;
+		float:left;
+		margin:.023%;
+		padding:.01%;
+	}
+	
+.bodyText
+	{
+		font-family:'Iceland', serif;
+		font-size:1em;
+		color:black;
+		line-height:3em;
+		margin-bottom:.02%;
+	}
+	
+a:link
+	{
+		font-family: 'Special Elite', cursive;
+		font-size:10em;
+		color:black;
+	}
+
+a:visited
+	{
+		color:black;
+	}
+	
+a:hover
+	{
+		color:red;
+	}
+
+label, input, button
+	{
+		display:block;
+		margin:.01%
+	}
+	
+button
+	{
+		height:50px;
+		width:100px;
+	}

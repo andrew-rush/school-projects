@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+
+	var messageText = "Welcome to England!!! ... Become a Member Today!!! ---";
+	var messageLength = messageText.length - 1;
+	
+	function scrollMessage()
+		{
+			tempMessage = messageText.substring(1, messageLength) + messageText.substring(0,1);
+			messageText = tempMessage;
+			document.myForm.message.value = messageText;
+			setTimeout("scrollMessage()", 250);
+		}
+</script>
+</head>
+
+<body onLoad = "scrollMessage()">
+
+	<form name="myForm">
+    	<h1><input type="text" name="message" id="message" size="30"></h1>
+    </form>
+
+</body>
+</html>

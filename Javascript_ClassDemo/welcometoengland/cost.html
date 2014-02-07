@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cost</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/banners.js"></script>
+<script type="text/javascript" src="scripts/clickBanner.js"></script>
+
+<script>
+	
+	function getTokens()
+	{
+		var qMark = document.URL.indexOf('?');
+		var daytrips = new Array();
+		
+		if(qMark != -1)
+		{
+			var pairsArray = document.URL.substring(qMark+1, document.URL.length).split('&');
+			
+			for(i=0;i<pairsArray.length;i++)
+			{
+				var nameVal = pairsArray[i].split('=');
+				daytrips[nameVal[0]]=nameVal[1];
+			}
+		}
+		return daytrips;
+	}
+	
+</script>
+
+</head>
+
+<body onLoad="changePic()">
+	<div id="page"><!-- page: start -->
+    	<p class="centerContent"><img src="images/welcometoengland_text.png" width="975" height="100" alt="Welcome to England" title="Welcome to England" /></p>
+    	<div id="container"><!-- container: start -->
+        	<div id="banner">
+            	<p class="centerContent">
+                	<a href="#" onClick="changeURL()">
+                    	<img src="images/london_banner_1.png" name="Banner" id="bannerImage" width="992" height="249">
+                    </a>
+                </p>
+            </div> 
+            <div id="menu"><!-- menu: start -->
+            	<p class="centerContent">
+                	<a href="index.html">Home</a> |
+                    <a href="london.html">London</a> |
+                    <a href="daytrips.html">Day Trips</a> |
+                    <a href="cost.html">Cost</a> |
+                    <a href="stay.html">Stay</a> |
+                    <a href="travel.html">Travel</a> |
+                    <a href="shop.html">Shop</a> |
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+        	<div id="main"><!-- main: start -->
+            	<script>
+					var costArray = new Array();
+					costArray["HarryPotter"] = 75;
+					costArray["Cadbury"] = 60;
+					costArray["Ireland"] = 175;
+					costArray["Scotland"] = 125;
+					costArray["Belgium"] = 150;
+					
+					selDayTripsArray = getTokens();
+					var desc = "<p>You have selected the Day Trip to</p>";
+					desc += "<ul>";
+					var totalCost = 0;
+					
+					for(key in selDayTripsArray)
+					{
+						switch(selDayTripsArray[key])
+						{
+							case "HarryPotter":
+								var hCost = costArray['HarryPotter'];
+								totalCost +=costArray['HarryPotter'];
+								document.write("<p>The cost for the " + selDayTripsArray[key] + " the trip is $" + hCost + ".00</p>");
+								desc += "<li>Harry Potter Studio Tour</li>";
+								break;
+							case "Cadbury":
+								var cCost = costArray['Cadbury'];
+								totalCost +=costArray['Cadbury'];
+								document.write("<p>The cost for the " + selDayTripsArray[key] + " the trip is $" + cCost + ".00</p>");
+								desc += "<li>Cadbury World</li>";
+								break;
+							case "Ireland":
+								var iCost = costArray['Ireland'];
+								totalCost +=costArray['Ireland'];
+								document.write("<p>The cost for the " + selDayTripsArray[key] + " the trip is $" + iCost + ".00</p>");
+								desc += "<li>Ireland</li>";
+								break;
+							case "Scotland":
+								var sCost = costArray['Scotland'];
+								totalCost +=costArray['Scotland'];
+								document.write("<p>The cost for the " + selDayTripsArray[key] + " the trip is $" + sCost + ".00</p>");
+								desc += "<li>Scotland</li>";
+								break;
+							case "Belgium":
+								var bCost = costArray['Belgium'];
+								totalCost +=costArray['Belgium'];
+								document.write("<p>The cost for the " + selDayTripsArray[key] + " the trip is $" + bCost + ".00</p>");
+								desc += "<li>Belgium</li>";
+								break;
+						}
+					}
+                </script>
+                <p>&nbsp;</p>
+                <script>
+					if(totalCost == 0)
+					{
+						document.write("Please click on the Day Trips tab above to select trips you'd like to take.");
+					}
+					else
+					{
+						document.write("Your total cost for the(se) trip(s) is $" + totalCost + ".00");
+					}
+                </script>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            <script>
+            
+            	if(totalCost == 0)
+				{
+					document.write("You have not selected any Day Trips.");
+				}
+				else
+				{
+					document.write(desc);
+					document.write("</ul");
+				}
+            </script>
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <div class="push"></div><!-- ends wrapper (created for sticky footer) -->
+    </div><!-- page: end -->
+    <div class="footer"><!-- footer: start -->
+    <script type="text/javascript" src="scripts/lastModified.js"></script>
+    </div><!-- footer: end -->
+
+</body>
+</html>

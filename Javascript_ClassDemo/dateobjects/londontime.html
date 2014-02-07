@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<!--<script type="text/javascript">
+
+function londonTime() {
+	
+	today = new Date();
+	lonTime = new Date();
+	lonTime.setHours(today.getHours()+5);
+	document.Lclock.Ltime.value = lonTime.toLocaleString();
+}
+</script> -->
+<script type="text/javascript" src="../welcometoengland/scripts/londonTime.js"></script>
+</head>
+
+<body onLoad="setInterval('londonTime()', 1000)">
+ 
+<div id="londonTime">
+    <form name="Lclock" id="Lclock" action="#">
+        <p>
+            <input type="text" name="Ltime" size="50" />
+        </p>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+	slidePics = new Array(
+					'../welcometoengland/images/slideshow/ben.jpg',
+					'../welcometoengland/images/slideshow/city.jpg',
+					'../welcometoengland/images/slideshow/beatle.jpg',
+					'../welcometoengland/images/slideshow/eye.jpg',
+					'../welcometoengland/images/slideshow/bridge.jpg',
+					'../welcometoengland/images/slideshow/hpstudio.jpg',
+					'../welcometoengland/images/slideshow/guard.jpg',
+					'../welcometoengland/images/slideshow/holmes.jpg',
+					'../welcometoengland/images/slideshow/phone.jpg',
+					'../welcometoengland/images/slideshow/view.jpg');
+	picCounter1 = 0;
+	
+	function first() {
+		
+		picCounter1 = 0;
+		document.Display.src = slidePics[picCounter1];
+		
+	}
+	
+	function previous() {
+		if(document.slideshow && picCounter1 > 0) {
+			picCounter1--;
+			document.Display.src = slidePics[picCounter1];
+		} else {
+			last();
+		}
+	}
+	
+	function next() {
+		if(document.slideshow && picCounter1 < slidePics.length-1) {
+			picCounter1++;
+			document.Display.src = slidePics[picCounter1];
+		} else {
+			first();
+		}
+	}
+	
+	function last() {
+		picCounter1 = slidePics.length-1;
+		document.Display.src = slidePics[picCounter1];
+	}
+	
+</script>
+</head>
+
+<body>
+<form id="slideshow" name="slideshow">
+	<p class="centerContent">
+    	<img src="../welcometoengland/images/slideshow/ben.jpg" name="Display">
+    </p>
+    <p class="centerContent">
+    	<button name="firstSlide" id="firstSlide" onClick="first()"><<</button>
+        <button name="previousSlide" id="previousSlide" onClick="previous()"><</button>
+        <button name="nextSlide" id="nextSlide" onClick="next()">></button>
+        <button name="lastSlide" id="lastSlide" onClick="last()">>></button>
+    </p>
+</form>
+
+</body>
+</html>

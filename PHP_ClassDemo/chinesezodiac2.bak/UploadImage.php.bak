@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W#C//DTD XHTML 1.0 Strict//EN"
+                        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+        <meta http-equiv="content-type
+                content="text/html; charset=iso-8859-1" />
+    </head>
+    <body>
+        
+    <?php
+    
+        if(!isset($_POST['upload'])) {
+            
+            echo "<form action = \"UploadImage.php\" method = \"POST\" enctype=\"multipart/form-data\">\n";
+            echo "\t<p><input type = \"hidden\" value =\"MAX_FILE_SIZE\" value = \"75000\" />\n\tFile: <input type = \"file\" name = \"myFile\" /></p>\n";
+            echo "\t<p><input type = \"submit\" name=\"upload\" value = \"Submit\" /></p>\n\t</form>\n";
+            
+        } else {
+            
+            $source = $_FILES['myFile']['tmp_name'];
+            $dest = "images/".$_FILES['myFile']['name'];
+            
+            echo "<p>$source: $dest</p>";
+            
+            if( move_uploaded_file($_FILES['myFile']['tmp_name'], "images/".$_FILES['myFile']['name']) == FALSE ) {
+                
+                echo "<p>could not move file to \"images/" . htmlentities($_FILES['myFile']['name']) . "</p>\n";
+                
+            } else {
+                
+                chmod("images/".$_FILES['myFile']['name'], 0644);
+                echo "<p>Upload succeeded!</p>\n";
+                
+            }
+            
+        }
+
+    ?>
+    
+    </body>
+    
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome to England</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/date.js"></script>
+<script type="text/javascript" src="scripts/countdown.js"></script>
+<script type="text/javascript" src="scripts/banners.js"></script>
+<script type="text/javascript" src="scripts/clickBanner.js"></script>
+<script type="text/javascript" src="scripts/homePageSlideshow.js"></script>
+<script type="text/javascript" src="scripts/membershipform.js"></script>
+<script type="text/javascript" src="scripts/messageform.js"></script>
+<script type="text/javascript" src="scripts/showForm.js"></script>
+<script type="text/javascript" src="scripts/welcome.js"></script>
+</head>
+
+<body onLoad="changePic(); scrollMessage(); checkVisitor()">
+	<div id="page"><!-- page: start -->
+    	<p class="centerContent"><img src="images/welcometoengland_text.png" width="975" height="100" alt="Welcome to England" title="Welcome to England" /></p>
+    	<div id="container"><!-- container: start -->
+        	<div id="banner">
+            	<p class="centerContent">
+                	<a href="#" onClick="changeURL()">
+                    	<img src="images/london_banner_1.png" name="Banner" id="bannerImage">
+                    </a>
+                </p>
+            </div> 
+        	<div id="menu"><!-- menu: start -->
+            	<p class="centerContent">
+                	<a href="index.html">Home</a> |
+                    <a href="london.html">London</a> |
+                    <a href="daytrips.html">Day Trips</a> |
+                    <a href="cost.html">Cost</a> |
+                    <a href="stay.html">Stay</a> |
+                    <a href="travel.html">Travel</a> |
+                    <a href="shop.html">Shop</a> |
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+        	<div id="welcome">
+			</div>
+			<script type="text/javascript">
+                displayDate();
+            </script>
+			<div id="main"><!-- main: start -->
+            Page information
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+                <div id="countdown" class="centerContent">
+                    <script type="text/javascript">
+                        countdownTrip();
+                    </script>
+            	</div><!-- end Countdawn 
+                <div id="londonSlideshow" class="centerContent">
+                	<p>slideshow!</p>-->
+                    <form id="slideshow" name="slideshow">
+                        <p>
+                            <img src="images/slideshow/ben.jpg" name="Display" id="banner" />
+                        </p>
+                        <p class="centerContent">
+                            <input type="button" value="<<" onClick = "first()" />
+                            <input type="button" value="<" onClick="previous()" />
+                            <input type="button" value=">" onClick="next()" />
+                            <input type="button" value=">>" onClick="last()" />
+                        </p>
+                    </form>
+                <!-- </div> -->
+            </div><!-- right: end -->
+            <p>
+                <form name="myForm">
+                    <input type="text" name="message" id="message" class="scrollText">
+                </form>
+            </p>
+            <!---->
+            <p class="centerContent"><a href="javascript: displayForm()" id="show">Become a Travel Club Member</a></p>
+            <form id="memForm" name="mForm" action="mailto:andrew.rush@maine.edu" method="post" enctype="text/plain" onSubmit="return validateMembershipForm()">
+                <h1>Membership Form</h1>
+                <p>Completing this form will help me determine places my visitors want to visit. Using this information i can continue to provide my visitors with content they find useful!</p>
+                <p>All fields are required.</p>
+           		<div id="formLeft">
+            		
+                        <label for="fName">First Name</label>
+                        <input type="text" name="fName" id="fName" size="25" placeholder="First Name">
+                        <label for="lName">Last Name</label>
+                        <input type="text" name="lName" id="lName" size="25" placeholder="Last Name">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" size="40" placeholder="Email">
+                        <label for="birthday">Date of Birth</label>
+                        <input type="text" name="birthday" id="bDay" size="15" placeholder="mm-dd-yyyy">            
+                    
+                </div>
+                <div id="formMid">
+                    	<p>Age Range</p>
+                        <span class="blockForm"><input type="radio" name="age" id="under12" value="Under 12">Under 12</span>
+                        <span class="blockForm"><input type="radio" name="age" id="1218" value="12-18">12-18</span>
+                        <span class="blockForm"><input type="radio" name="age" id="1930" value="19-30">19-30</span>  
+                        <span class="blockForm"><input type="radio" name="age" id="3140" value="31-40">31-40</span>
+                        <span class="blockForm"><input type="radio" name="age" id="4150" value="41-50">41-50</span>
+                        <span class="blockForm"><input type="radio" name="age" id="5160" value="51-60">51-60</span>
+                        <span class="blockForm"><input type="radio" name="age" id="over60" value="Over 60">Over 60</span>
+                    
+                </div>
+                <div id="formRight">
+                    	<p>Other countries of interest.</p>
+                        <span class="blockForm"><input type="checkbox" name="England" value="England">England</span>
+                        <span class="blockForm"><input type="checkbox" name="Ireland" value="England">Ireland</span>
+                        <span class="blockForm"><input type="checkbox" name="Scotland" value="England">Scotland</span>
+                        <span class="blockForm"><input type="checkbox" name="Norway" value="England">Norway</span>
+                        <span class="blockForm"><input type="checkbox" name="Sweden" value="England">Sweden</span>
+                        <span class="blockForm"><input type="checkbox" name="Finland" value="Finland">Finland</span>
+                        <span class="blockForm"><input type="checkbox" name="Germany" value="Germany">Germany</span>
+                        <span class="blockForm"><input type="checkbox" name="Netherland" value="Netherland">Netherland</span>
+                        <span class="blockForm"><input type="checkbox" name="Belgium" value="Belgium">Belgium</span>
+                        <span class="blockForm"><input type="checkbox" name="Spain" value="Spain">Spain</span>
+                        <span class="blockForm"><input type="checkbox" name="Switzerland" value="Switzerland">Switzerland</span>
+                        <span class="blockForm"><input type="checkbox" name="Italy" value="Italy">Italy</span>
+                        <span class="blockForm"><input type="checkbox" name="Austria" value="Austria">Austria</span>
+                    
+				</div>
+                <div id="formButtons">         
+                    <input type="submit" value="Send Form">
+                    <input type="reset" value="Clear Form">
+                    <p class="centerContent"><a href="javascript:displayForm()" id="noshow" style="display:none">No thanks! I will sign up some other time..."</a></p>
+                </div> 
+                
+            </form>
+        </div><!-- content: end -->
+        <div class="push"></div><!-- ends wrapper (created for sticky footer) -->
+    </div><!-- page: end -->
+    <div class="footer"><!-- footer: start -->
+    <script type="text/javascript" src="scripts/lastModified.js"></script>
+    </div><!-- footer: end -->
+
+</body>
+</html>

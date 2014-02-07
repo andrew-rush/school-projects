@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shopping Cart</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/banners.js"></script>
+<script type="text/javascript" src="scripts/clickBanner.js"></script>
+
+<style>
+
+	html, body
+	{
+		background-color:lightblue;
+	}
+
+	#OrderForm a:link, #cart a:link
+	{
+		font-size:14px;
+	}
+	
+	.right
+	{
+		text-align:right;
+	}
+
+</style>
+
+<script>
+
+	var totalPrice = 0;
+	
+	function addToCartOld(item, price)
+	{
+		alert(totalPrice);
+		var cart = document.getElementById("cartLineItem");
+		var row = document.createElement("tr");
+		row.setAttribute("id", item + '_cartRow');
+		var td1 = document.createElement("td");
+		td1.setAttribute("width", '70%');
+		td1.appendChild(document.createTextNode(" " + item + " "));
+		var href = document.createElement("a");
+		href.setAttribute("href", "javascript:removeFromCart('" + item + "');");
+		href.setAttribute('class', 'remove');
+		href.setAttribute('id', 'nonprint');
+		href.appendChild(document.createTextNode(' Remove Item '));
+		td1.appendChild(href);
+		row.appendChild(td1);
+		
+		var td2 = document.createElement('td');
+		td2.setAttribute('id', item + '_price');
+		td2.setAttribute('style', 'text-align:right');
+		td2.setAttribute('width',  item + '20%');
+		td2.appendChild(document.createTextNode(price));
+		row.appendChild(td2);
+		cart.appendChild(row);
+		
+		var total = document.getElementById("cartTotal");
+		if(totalPrice == null) {
+			totalPrice = 0;
+		}
+		var totalPrice = totalPrice + price;
+		ftotalPrice = totalPrice.toFixed(2);
+		
+		//priceType = typeof price;
+		//totalType = typeof totalPrice;
+		//ftotalType = typeof ftotalPrice;
+		
+		//alert(price + ": " + priceType + " " + totalPrice + ": " + totalType + " " + ftotalPrice +": " + ftotalType);
+		var newTotal = document.createElement('td');
+		newTotal.setAttribute('style', 'text-align: left');
+		newTotal.setAttribute('id', 'cartTotal');
+		
+		//newTotal.appendChild(document.createTextNode('$'));
+		//newTotal.appendChild(document.createTextNode(ftotalPrice + ''));
+		// total.parentNode.replaceChild(newtotal, total);
+		total.innerHTML = '$' + ftotalPrice + '';
+		alert(item + " has been added to your cart.");
+	}
+	
+	function addToCart(item, price)
+	{
+		var cart = document.getElementById("cartLineItem");
+		var row = document.createElement("tr");
+		row.setAttribute("id", item + '_cartRow');
+		var td1 = document.createElement("td");
+		td1.setAttribute("width", '70%');
+		td1.appendChild(document.createTextNode(" " + item + " "));
+		var href = document.createElement("a");
+		href.setAttribute("href", "javascript:removeFromCart('" + item + "');");
+		href.setAttribute('class', 'remove');
+		href.setAttribute('id', 'nonprint');
+		href.appendChild(document.createTextNode(' Remove Item '));
+		td1.appendChild(href);
+		row.appendChild(td1);
+		
+		var td2 = document.createElement('td');
+		td2.setAttribute('id', item + '_price');
+		td2.setAttribute('style', 'text-align:right');
+		td2.setAttribute('width',  item + '20%');
+		td2.appendChild(document.createTextNode(price));
+		row.appendChild(td2);
+		cart.appendChild(row);
+		
+		var currentTotal = document.getElementById("cartTotal").innerText;
+		/*if(currentTotal == "")
+		{
+			currentTotal = 0;
+		}
+		alert("Total: " + currentTotal);*/
+		currentTotal = parseFloat(currentTotal);
+		var newTotal = currentTotal + price;
+		newTotal.toFixed(2);
+		document.getElementById("cartTotal").innerText = newTotal;
+		
+		
+	}
+	
+	function removeFromCart(id)
+	{
+		var element = document.getElementById(id + '_cartRow');
+		var total = document.getElementById('cartTotal');
+		var price = parseFloat(document.getElementById(id + '_price').innerHTML);
+		
+		totalPrice -= price;
+		ftotalPrice = totalPrice.toFixed(2);
+		total.innerHTML = '$' + ftotalPrice + '';
+		element.parentNode.removeChild(element);
+	}
+	
+	function printOrder()
+	{
+		var name = "";
+		var customerID = "";
+		var phone = "";
+		
+		name = prompt("Enter your name:", "");
+		customerID = prompt("Enter your customer ID:", "");
+		phone = prompt("Enter your phone number:", "");
+		
+		var features = "toolbar=yes,location=no,directories=yes,menubar=yes";
+		features += "scrollbars=yes,width=650,height=600,left=100,top=25";
+		
+		var order = window.open("", "Order Window", features);
+		order.document.open();
+		order.document.write("<html><head><title>Shopping Cart Order</title>\n");
+		order.document.write("<style>input {display:none} #nonprint{display:none}</style>\n");
+		order.document.write("</head><body onLoad=\"self.print()\">\n");
+		order.document.write("<p>Thank you for placing an order!</p>\n");
+		order.document.write("<h1 style=\"text-align:center\">Order Form</h1><p style=\"text-align:center\">Thank you for shopping, " + name + "</p>\n");
+		order.document.write("<p style=\"text-align:center\">" + name + "</p>\n");
+		order.document.write("<p style=\"text-align:center\">" + customerID + "</p>\n");
+		order.document.write("<p style=\"text-align:center\">" + phone + "</p>\n");
+		
+		var content_cart = document.getElementById("cart");
+		order.document.write(content_cart.innerHTML);
+		order.document.write('<plaintext></body></html>\n');
+		order.document.close();
+		order.focus();
+	}
+	
+	function viewCart()
+	{
+		document.getElementById('cart').style.display = "block";
+	}
+
+</script>
+
+</head>
+
+<body onLoad="changePic()">
+	<div id="page"><!-- page: start -->
+    	<p class="centerContent"><img src="images/welcometoengland_text.png" width="975" height="100" alt="Welcome to England" title="Welcome to England" /></p>
+    	<div id="container"><!-- container: start -->
+        	<div id="banner">
+            	<p class="centerContent">
+                	<a href="#" onClick="changeURL()">
+                    	<img src="images/london_banner_1.png" name="Banner" id="bannerImage" width="992" height="249">
+                    </a>
+                </p>
+            </div> 
+            <div id="menu"><!-- menu: start -->
+            	<p class="centerContent">
+                	<a href="index.html">Home</a> |
+                    <a href="london.html">London</a> |
+                    <a href="daytrips.html">Day Trips</a> |
+                    <a href="cost.html">Cost</a> |
+                    <a href="stay.html">Stay</a> |
+                    <a href="travel.html">Travel</a> |
+                    <a href="shop.html">Shop</a> |
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+        	<div id="main"><!-- main: start -->
+            	<h2 class="centerContent">Welcome to the England Shopping Site</h2>
+                <form id="OrderForm">
+                	<div class="centerContent">
+                    	<p><a href="javascript:viewCart();">View Cart</a></p>
+                        <table border="1" cellspacing="1" cellpadding="3" style="background-color:lightblue">
+                        	<tr>
+                            	<td>
+                                	<img src="images/products/Eye've_Seen_London_Mug.png" width="100" height="100">
+                                </td>
+                                <td>
+                                	<p>White mug with a picture of London Eye.</p>
+                                    <p><a href="javascript:addToCart('LondonMug', 9.99)">Add to Cart</a></p>
+                                </td>
+                                <td class="right">$9.99</td>
+                            </tr>
+                        	<tr>
+                            	<td>
+                                	<img src="images/products/HP_canvas_bag.png" width="100" height="100">
+                                </td>
+                                <td>
+                                	<p>Tan canvas with image of Harry Potter.</p>
+                                    <p><a href="javascript:addToCart('LondonBag', 19.99)">Add to Cart</a></p>
+                                </td>
+                                <td class="right">$9.99</td>
+                            </tr>
+                        	<tr>
+                            	<td>
+                                	<img src="images/products/london_Map.png" width="100" height="100">
+                                </td>
+                                <td>
+                                	<p>Tourist map of London attractions.</p>
+                                    <p><a href="javascript:addToCart('LondonMap', 14.99)">Add to Cart</a></p>
+                                </td>
+                                <td class="right">$14.99</td>
+                            </tr>
+                        	<tr>
+                            	<td>
+                                	<img src="images/products/london_tea.png" width="100" height="100">
+                                </td>
+                                <td>
+                                	<p>A taste of the teas that make London famous.</p>
+                                    <p><a href="javascript:addToCart('LondonTeas', 12.95)">Add to Cart</a></p>
+                                </td>
+                                <td class="right">$12.95</td>
+                            </tr>
+                        	<tr>
+                            	<td>
+                                	<img src="images/products/england_album_1.png" width="100" height="100">
+                                </td>
+                                <td>
+                                	<p>Pictures of London's most famous attractions in an acid-free binder</p>
+                                    <p><a href="javascript:addToCart('LondonAlbum', 24.95)">Add to Cart</a></p>
+                                </td>
+                                <td class="right">$24.95</td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+                <p>Email us for more information:<a href="mailto:shopEngland@buy.en"><span style="font-size:18px; color: blue; font:arial"> shopEngland@buy.en</span></a></p>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            	<p>When you have finished shopping, print your order and fax it to 555-555-5555.</p>
+                <div id="cart" style="display:none; margin-top:30px;">
+                	<p class="centerContent">
+                    	<form>
+                        	<table id="cartTable" border="2" width="75%">
+                            	<thead>
+                                	<tr>
+                                    	<th colspan="2">Contents of Cart</th>
+                                    </tr>
+                                    <tr>
+                                    	<td width="70%">Item</td>
+                                        <td width="20%">Price</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="cartLineItem"></tbody>
+                                <tfoot>
+                                	<tr>
+                                    	<td class="right">Total</td>
+                                        <td id="cartTotal" style="text-align:right">0</td>
+                                    </tr>
+                                </tfoot>
+                                <tr class="input">
+                                	<td colspan="2" class="centerContent">
+                                    	<input type="button" value="Print Order" onClick= "javascript:printOrder()">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </p>
+                </div><!-- end cart -->
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <div class="push"></div><!-- ends wrapper (created for sticky footer) -->
+    </div><!-- page: end -->
+    <div class="footer"><!-- footer: start -->
+    <script type="text/javascript" src="scripts/lastModified.js"></script>
+    </div><!-- footer: end -->
+
+</body>
+</html>

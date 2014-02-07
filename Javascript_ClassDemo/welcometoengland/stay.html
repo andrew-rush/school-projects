@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stay</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/banners.js"></script>
+<script type="text/javascript" src="scripts/clickBanner.js"></script>
+<script type="text/javascript" src="scripts/accordion_menu.js"></script>
+<style>
+	.menu
+		{
+			display:none;
+			margin-left:15px;
+		}
+	#main
+		{
+			width:400px;
+		}
+	#right
+		{
+			width:550px;
+		}
+</style>
+
+</head>
+
+<body onLoad="changePic()">
+	<div id="page"><!-- page: start -->
+    	<p class="centerContent"><img src="images/welcometoengland_text.png" width="975" height="100" alt="Welcome to England" title="Welcome to England" /></p>
+    	<div id="container"><!-- container: start -->
+        	<div id="banner">
+            	<p class="centerContent">
+                	<a href="#" onClick="changeURL()">
+                    	<img src="images/london_banner_1.png" name="Banner" id="bannerImage" width="992" height="249">
+                    </a>
+                </p>
+            </div> 
+            <div id="menu"><!-- menu: start -->
+            	<p class="centerContent">
+                	<a href="index.html">Home</a> |
+                    <a href="london.html">London</a> |
+                    <a href="daytrips.html">Day Trips</a> |
+                    <a href="cost.html">Cost</a> |
+                    <a href="stay.html">Stay</a> |
+                    <a href="travel.html">Travel</a> |
+                    <a href="shop.html">Shop</a> |
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+        	<div id="main"><!-- main: start -->
+                <!-- Accordion menu gooes here -->
+                <h1>Places to Stay</h1>
+                <br>
+                <h4 class="centerContent">Content of places to stay from respective web sites.
+                <br>For Educational Purposes Only</h4>
+                <h4><a href="stay.html" onClick="return switchMenu('menu1')">Hotels</a></h4>
+                <span class="menu" id="menu1">
+                    <p style="text-indent:20px"><a href="thecromwell.html">Best Western - The Cromwell</a></p>
+                    <p style="text-indent:20px"><a href="express-southwark.html">Holiday Inn Express - Southwark</a></p>
+                    <p style="text-indent:20px"><a href="days-hydepark.html">Day's Inn - Hyde Park</a></p>
+                </span>
+                <br>
+                <h4><a href="stay.html" onClick="return switchMenu('menu2')">Hostels</a></h4>
+                <span class="menu" id="menu2">
+                    <p style="text-indent:20px"><a href="yha_oxford.html">YHA - Oxford Street</a></p>
+                    <p style="text-indent:20px"><a href="yha_central.html">YHA - Central</a></p>
+                    <p style="text-indent:20px"><a href="yha_stpancras.html">YHA - St. Pancras</a></p>
+                </span>
+                <br>
+                <h4><a href="stay.html" onClick="return switchMenu('menu3')">Bed & Breakfasts</a></h4>
+                <span class="menu" id="menu3">
+                    <p style="text-indent:20px"><a href="arran_house.html">Arran House</a></p>
+                    <p style="text-indent:20px"><a href="the_sumner.html">The Sumner</a></p>
+                    <p style="text-indent:20px"><a href="americana.html">Americana</a></p>
+                </span>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            <!-- overview of places to stay here -->
+            <h1>Staying in London - Overview</h1>
+            <p>There are so many choices of places to stay in London!!</p>
+            <p>So, what are the different hotels, hostels and B&B's?</p>
+            <p><strong>Hotels</strong> -- good news; you will find most of the major US hotel chains in London. Bad news; it can be very expensive to stay in London, especially the central area. But if your budget can handle it, the have most of the usual amenities that the US hotels offer. Some even have "free breakfast and free WiFi"</p>
+            <p><strong>Hostels</strong> -- don't let those scary movies freak you out! I always stay in hostels and have never had a problem. Let's face it - you are going to be out all day and only back to the room to shower and sleep. Why pay $200+ a night for that, when you can pay $30 a night instead? Yes, you have to share a room, but you get your own bed and suitcase size lockers in the rooms for your valuables. I usually travel by myself, so this works for me. If you're travelling with more people you can share the cost. In hotels you rarely talk with other guests. In hostels, you speak with people from all over the world. It's an amazing experience.</p>
+            <p><strong>Bed & Breakfasts</strong> -- some of the B&Bs in central London look and act more like hotels, though they are usually owned by an individual owner rather than a corporation. The price tag is usually between hotels and hostels. If you want something more like an American B&B, you will have to stay further out of town.</p>
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <div class="push"></div><!-- ends wrapper (created for sticky footer) -->
+    </div><!-- page: end -->
+    <div class="footer"><!-- footer: start -->
+    <script type="text/javascript" src="scripts/lastModified.js"></script>
+    </div><!-- footer: end -->
+
+</body>
+</html>

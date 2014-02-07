@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Day Trips</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="scripts/banners.js"></script>
+<script type="text/javascript" src="scripts/clickBanner.js"></script>
+
+<script>
+
+	function validateForm()
+	{
+		if( (document.DTform.HarryPotter.checked == false) &&
+			(document.DTform.Cadbury.checked == false) &&
+			(document.DTform.Ireland.checked == false) &&
+			(document.DTform.Scotland.checked == false) &&
+			(document.DTform.Belgium.checked == false) )
+		{
+			document.write("<p><a href=\"daytrips.html\">You must select at least one Day Trip</a></p>");
+			return false;
+		}
+	}
+	
+	daytripsTitleArray = new Array(
+							"<h2>HarryPotter</h2>",
+							"<h2>CadburyWorld</h2>",
+							"<h2>Ireland</h2>",
+							"<h2>Scotland</h2>",
+							"<h2>Belgium</h2>");
+	daytripsImageArray = new Array(
+							"<img src=\"images/HarryPotter.jpg\" alt=\"Harry Potter daytrip\" width=\"400\" height=\"225\">",
+							"<img src=\"images/Cadbury.jpg\" alt=\"Cadbury daytrip\ width=\"400\" height=\"225\">",
+							"<img src=\"images/Ireland.jpg\" alt=\"Ireland daytrip\" width=\"400\" height=\"225\">",
+							"<img src=\"images/Scotland.jpg\" alt=\"Scotland daytrip\" width=\"400\" height=\"225\">",
+							"<img src=\"images/Belgium.jpg\" alt=\"Belgium daytrip\" width=\"400\" height=\"225\">");
+	daytripsDescArray = new Array(
+							"Spend a day immersed in the world of Harry Potter!<br/><br/>Enjoy The Harry Potter Studio Tour - People the world-over have been enchanted by the Harry Potter films for nearly a decade. The wonderful special effects and amazing creatures have made this iconic series beloved to both young and old – and now, for the first time, the doors are open for everyone at the studio where it first began. <br/> <br/>You'll have the chance to go behind-the-scenes and see many things the camera never showed. From breathtakingly detailed sets to stunning costumes, props and animatronics, Warner Bros. Studio Tour London provides a unique showcase of the extraordinary British artistry, technology and talent that went into making the most successful film series of all time", 
+							"Spend a day in Cadbury World!! <br/><br/>Enjoy the Chocolate Tour: See how chocolate has journeyed from the Aztec Jungle to England, how Cadbury makes their famous chocolate, and even make some chocolate concoctions of your own. There are rides, demonstrations, and of course the world’s biggest Cadbury store! <br/><br/><br/>",
+							"Spend a day in Ireland.<br/> <br/> Perched on the northwest tip of Europe, Ireland is the one place in the world where even time getting lost will be worthwhile. With ancient myths and legends to uncover, amazing landscapes to explore and locals who will be more than happy to reveal our hidden gems, just go where the island of Ireland takes you. Guaranteed, you'll return home with memories that will last a lifetime.<br/><br/> The island of Ireland's history dates back as far as 6000BC! And a lot has happened in between then and now! With bizarre lunar landscapes, the mighty Atlantic Ocean, labyrinthine caves and crystal clear waterways, Ireland's diverse landscapes will take your breath away.<br/><br/> Beyond the landscapes , the cities are hip, vibrant and cosmopolitan, Ireland’s 11 urban hubs are perfectly formed – not too big to be overwhelming, and not so small that you can see it all in a day! From Belfast, Londonderry, Newry, Lisburn and Armagh, to Dublin, Galway, Cork, Kilkenny, Waterford and Limerick, every city in Ireland packs a punch with its own unique cultural flavor.",
+							"Spend a day Scotland. <br/><br/> Explore Scotland, famous for its historic castles, traditional Highland games and beautiful lochs, and discover the setting of world-famous movies, the place for stylish shopping and the perfect stage for new and exciting events; you’ll find the country is a fantastic mix of stunning landscapes, wildlife and wonderful local produce, combined with a thriving arts and culture scene, and topped off with a colourful history of epic battles and historic castles.",
+							"Spend a day in Belgium. <br/> <br/> Belgium is Europe in a nutshell. Don't be fooled by its size, though, as Belgium offers something for everyone: over 200 museums, 300 art nouveau buildings in Brussels, 650 different styles of beer and 2,000 chocolate shops(home of Godivia!); not to mention the castles, gardens, festivals, and so much more");
+	
+	function modifyText(daytrip)
+	{
+		switch(daytrip)
+			{
+				case "HarryPotter":
+					document.getElementById('attTitle').innerHTML = daytripsTitleArray[0];
+					document.getElementById('attImage').innerHTML = daytripsImageArray[0];
+					document.getElementById('attDesc').innerHTML = daytripsDescArray[0];
+				break;
+				case "Cadbury":
+					document.getElementById('attTitle').innerHTML = daytripsTitleArray[1];
+					document.getElementById('attImage').innerHTML = daytripsImageArray[1];
+					document.getElementById('attDesc').innerHTML = daytripsDescArray[1];
+				break;
+				case "Ireland":
+					document.getElementById('attTitle').innerHTML = daytripsTitleArray[2];
+					document.getElementById('attImage').innerHTML = daytripsImageArray[2];
+					document.getElementById('attDesc').innerHTML = daytripsDescArray[2];
+				break;
+				case "Scotland":
+					document.getElementById('attTitle').innerHTML = daytripsTitleArray[3];
+					document.getElementById('attImage').innerHTML = daytripsImageArray[3];
+					document.getElementById('attDesc').innerHTML = daytripsDescArray[3];
+				break;
+				case "Belgium":
+					document.getElementById('attTitle').innerHTML = daytripsTitleArray[4];
+					document.getElementById('attImage').innerHTML = daytripsImageArray[4];
+					document.getElementById('attDesc').innerHTML = daytripsDescArray[4];
+				break;
+			}
+	}
+</script>
+
+<style>
+
+	#main
+		{
+			width:400px;
+		}
+	#right
+		{
+			width:550px;
+		}
+
+</style>
+
+</head>
+
+<body onLoad="changePic()">
+	<div id="page"><!-- page: start -->
+    	<p class="centerContent"><img src="images/welcometoengland_text.png" width="975" height="100" alt="Welcome to England" title="Welcome to England" /></p>
+    	<div id="container"><!-- container: start -->
+        	<div id="banner">
+            	<p class="centerContent">
+                	<a href="#" onClick="changeURL()">
+                    	<img src="images/london_banner_1.png" name="Banner" id="bannerImage" width="992" height="249">
+                	</a>
+                </p>
+            </div> 
+            <div id="menu"><!-- menu: start -->
+            	<p class="centerContent">
+                	<a href="index.html">Home</a> |
+                    <a href="london.html">London</a> |
+                    <a href="daytrips.html">Day Trips</a> |
+                    <a href="cost.html">Cost</a> |
+                    <a href="stay.html">Stay</a> |
+                    <a href="travel.html">Travel</a> |
+                    <a href="shop.html">Shop</a> |
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+        	<div id="main"><!-- main: start -->
+            	<form name="DTform" id="frm_DTform" method="get" action="cost.html">
+                	<p>Please select at least one Day Trip to take and the total cost will be calculated on the Cost page.</p>
+                    <p>Day Trips i'd like to take:</p>
+                    <p>
+                    	<label for="frm_HarryPotter">
+                            <input type="checkbox" name="HarryPotter" id="frm_HarryPotter" value="HarryPotter">
+                            <span onMouseOver="modifyText('HarryPotter')">Harry Potter Studio Tour</span>
+                        </label>
+                    </p>
+                    <p>
+                    	<label for="frm_Cadbury">
+                            <input type="checkbox" name="Cadbury" id="frm_Cadbury" value="Cadbury">
+                            <span onMouseOver="modifyText('Cadbury')">Cadbury World</span>
+                        </label>
+                    </p>
+                    <p>
+                    	<label for="frm_Ireland">
+                            <input type="checkbox" name="Ireland" id="frm_Irelandr" value="Ireland">
+                            <span onMouseOver="modifyText('Ireland')">Ireland</span>
+                        </label>
+                    </p>
+                    <p>
+                    	<label for="frm_Scotland">
+                            <input type="checkbox" name="Scotland" id="frm_Scotland" value="Scotland">
+                            <span onMouseOver="modifyText('Scotland')">Scotland</span>
+                        </label>
+                    </p>
+                    <p>
+                    	<label for="frm_Belgium">
+                            <input type="checkbox" name="Belgium" id="frm_Belgium" value="Belgium">
+                            <span onMouseOver="modifyText('Belgium')">Belgium</span>
+                        </label>
+                    </p>
+                    <p><input type="submit" id="btn_submit" value="Submit" onClick="return validateForm()"></p>
+ 				</form>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            	<p id="attTitle">Choose a Day Trip<br>Mouse over the name of any Day Trip on the left to view more information about it</p>
+                <p id="attImage"><img src="images/DayTrips.png" alt="Day Trips photo collage" width="400" height="225"></p>
+                <p id="attDesc">Information about your day trip will appear here.</p>
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <div class="push"></div><!-- ends wrapper (created for sticky footer) -->
+    </div><!-- page: end -->
+    <div class="footer"><!-- footer: start -->
+    <script type="text/javascript" src="scripts/lastModified.js"></script>
+    </div><!-- footer: end -->
+
+</body>
+</html>

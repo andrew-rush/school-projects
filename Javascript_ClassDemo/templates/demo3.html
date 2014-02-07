@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script>
+	
+	function validateForm() {
+		var input_elements = document.getElementsByTagName('input');
+		var gender;
+		for(i=0; gender == null && i < input_elements.length; i++)
+		{
+			element = input_elements[i];
+			if(element.type == 'radio') {
+				if(element.checked) {
+					gender = element.value;
+				}
+			}
+		}
+		
+		if(gender == null) {
+			var errorMsg = 'Please select a gender';
+			errorflag = true;
+			alert(errorMsg);
+		} else {
+			alert(gender);
+		}
+	}
+
+</script>
+
+</head>
+
+<body>
+
+	<form name="demo1">
+    	<p>gender</p>
+        <p><label for="gender1"><input type="radio" name="gender" id="check1" value="Male">Male</label></p>
+        <p><label for="gender2"><input type="radio" name="gender" id="check2" value="Female">Female</label></p>
+        <p><input type="button" name="submit" id="btn_submit" value="Submit" onClick="validateForm()"></p>
+    </form>
+</body>
+</html>

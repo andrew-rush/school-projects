@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Child Window</title>
+    </head>
+    <body onload="initializeMainDiv();">
+        <div id="mainDiv"></div>
+    </body>
+    <script>
+    function initializeMainDiv() {
+        document.getElementById("mainDiv").innerHTML = "Parent window data field value is: " +
+            window.opener.document.getElementById("data").value
+    }
+    </script>
+</html>
+

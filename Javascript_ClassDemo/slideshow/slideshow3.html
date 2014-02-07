@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Banner</title>
+<script type="text/javascript">
+	slides = new Array('../welcometoengland/images/slideshow/ben.jpg',
+					'../welcometoengland/images/slideshow/city.jpg',
+					'../welcometoengland/images/slideshow/beatle.jpg',
+					'../welcometoengland/images/slideshow/eye.jpg',
+					'../welcometoengland/images/slideshow/bridge.jpg',
+					'../welcometoengland/images/slideshow/hpstudio.jpg',
+					'../welcometoengland/images/slideshow/guard.jpg',
+					'../welcometoengland/images/slideshow/holmes.jpg',
+					'../welcometoengland/images/slideshow/phone.jpg',
+					'../welcometoengland/images/slideshow/view.jpg');
+	slideCounter = 0;
+	
+	function changeSlide(slide) {
+		document.Display.src = slides[slide];
+	}
+	
+	function first() {
+		slideCounter = 0;
+		changeSlide(slideCounter);
+		
+	}
+	
+	function previous() {
+		if(document.slideshow && slideCounter > 0) {
+			slideCounter = slideCounter - 1;
+			changeSlide(slideCounter);
+		} else {
+			last();
+		}
+	}
+	
+	function next() {
+		if(document.slideshow && slideCounter < slides.length-1) {
+			slideCounter++;
+			changeSlide(slideCounter);
+		} else {
+			first();
+		}
+	}
+	
+	function last() {
+		slideCounter = slides.length-1;
+		changeSlide(slideCounter);
+	}
+	
+</script>
+</head>
+
+<body>
+	
+    <form id="slideshow" name="slideshow">
+        <p class="centerContent">
+            <img src="file:///Macintosh HD/Applications/MAMP/htdocs/welcometoengland/images/slideshow/ben.jpg" name="Display" id="banner" />
+        </p>
+        <p class="centerContent">
+        	<input type="button" value="<<" onClick = "first()" />
+            <input type="button" value="<" onClick="previous()" />
+            <input type="button" value=">" onClick="next()" />
+            <input type="button" value=">>" onClick="last()" />
+            <!-- <button name="firstSlide" id="firstSlide" onClick="first()"><<</button>
+            <button name="previousSlide" id="previousSlide" onClick="previous()"><</button>
+            <button name="nextSlide" id="nextSlide" onClick="next()">></button>
+            <button name="lastSlide" id="lastSlide" onClick="last()">>></button> -->
+        </p>
+    </form>
+</body>
+</html>

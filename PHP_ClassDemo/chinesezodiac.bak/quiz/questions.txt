@@ -1,0 +1,20 @@
+According to the Chinese Zodiac, the year of the cat occurred in 2000.
+True,False
+According to a legend, when Confucius died, twelve animals rushed to his bedside. The order of the Chinese Horoscope is the order in which they arrived. What was the first animal to arrive at Confucius' bedside?
+Tiger,Rat,Dragon,Horse
+According to legend, what year is the luckiest year to be born in?
+Rooster,Dog,Pig,Dragon
+What is the second Zodiac sign?
+text
+According to the Chinese Zodiac, what is the last year in the twelve-year cycle?
+Snake,Ox,Pig,Tiger
+If you were born in 1981, 1993 or 2005, you were born in the Year of the ________?
+text
+If you were born in 1982, 1994 or 2006, you were born in the Year of the ________?
+text
+If you were born in the year 1976, 1988 or 2000, you were born in the Year of the ________?
+text
+If you were born in 1972, with the current year being 2008, the next time your \year\ in the Chinese Zodiac will come around, is 2020.
+True,False
+What adjective best describe the snake, the 6th animal in the Chinese Zodiac?
+Frugal,Wise,Graceful,Sly

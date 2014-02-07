@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>RickRoll</title>
+
+<script src="scripts/get_set_cookie.js"></script>
+<script>
+
+	var rickImg = new Array("images/rickroll/dont-rickroll-me-bro.jpg",
+						"images/rickroll/hEAF863A4.jpeg",
+						"images/rickroll/images.jpeg",
+						"images/rickroll/letters.jpeg",
+						"images/rickroll/rick_roll_by_unknownsoldier9865-d61ziss.gif");
+	
+	var count = getCookie("visit");
+	//alert(count);
+	var rm = count % 5;
+	//alert(rm);
+	//var myElement = window.getElementsByTagName("body");
+	myString = "<img src=" + rickImg[rm] + ">";
+	
+</script>
+
+</head>
+
+<body>
+<script>document.write(myString);</script>
+</body>
+</html>

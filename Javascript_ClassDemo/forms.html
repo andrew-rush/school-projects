@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Andrew's JavaScript Demo ~ Form Validation</title>
+
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Iceland|Special+Elite' rel='stylesheet' type='text/css'>
+<script src="scripts/last_update.js"></script>
+<script src="scripts/banner.js"></script>
+<script src="scripts/get_set_cookie.js"></script>
+<script src="scripts/displaySelected.js"></script>
+<script src="welcometoengland/scripts/contactform.js"></script>
+<script src="scripts/cookieBanner.js"></script>
+<script src="scripts/setBackground.js"></script>
+<script src="scripts/openRick.js"></script>
+
+</head>
+
+<body onLoad="changePic(); setCookieBanner(); setBackground()">
+	<div id="page"><!-- page: start -->
+    	<div id="container"><!-- container: start -->
+            <div id="banner" class="centerContent">
+            	<img src="images/header.png" alt="Andrew's JavaScript Demo" class="centerContent" />
+            	<img src="images/banners/493049d121ad78baade552c415d94377ed5.gif" id="cookieBanner" name="cookieBanner">
+            </div>
+        	<div id="menu" class="centerContent"><!-- menu: start -->
+            	<a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+            </div><!-- menu: end -->
+        </div><!-- container: end -->
+        <div id="content"><!-- content: start -->
+            <div id="main"><!-- main: start -->
+            	<p>
+                    <form name="cForm" action="mailto:andrew.rush@maine.edu?subject='Website Mail'" method="post" enctype="text/plain" onSubmit="return validateForm()">
+                        <fieldset>
+                            <legend class="bodyText">Contact Andrew</legend>
+                            <label for="fName" class="bodyText">First Name</label>
+                            <input type="text" name="fName" id="fName" size="50" placeholder="Enter first Name">
+                            <label for="lName" class="bodyText">Last Name</label>
+                            <input type="text" name="lName" id="lName" size="50" placeholder="Enter last Name">
+                            <label for="email" class="bodyText">Email</label>
+                            <input type="email" name="email" id="email" size="50" placeholder="Enter email">
+                            <label for="inquiry" class="bodyText">Question Type</label>
+                            <select name="inquiry" class="bodyText">
+                                <option value="">Please Choose an Option</option>
+                                <option value="html">HTML 5</option>
+                                <option value="css">CSS</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="general">General Site</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea name="qBox" id="qBox" rows="10" cols="50" placeholder="Enter questions / comments"></textarea>
+                            <input type="submit" value="Send Question">
+                            <input type="reset" value="Clear Form">
+                        </fieldset>
+                    </form>                
+                </p>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            	<div id="badge">
+                    <h2 class="centerContent">Made With</h2>
+                    <p class="centerContent">
+                        <a href="#" onClick="changeURL()">
+                            <img src="images/html5.png" name="Banner" id="bannerImage" width="30%">
+                        </a>
+                    </p>
+                </div><!-- badge: end --><div id="selectFormDiv">
+                	<p>
+                        <form name="backgroundForm">
+                            <select name="backgroundSelect" onChange="displaySelected()">
+                                <option value="0">Choose Background</option>
+                                <option value="1">Desert</option>
+                                <option value="2">Mountain</option>
+                                <option value="3">Ocean</option>
+                                <option value="4">Road</option>
+                            </select>
+                        </form>
+                    </p>
+                </div><!-- end selectFormDiv --> 
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <!--<div class="push"></div>ends wrapper (created for sticky footer) -->
+        <div id="footer"><!-- footer: start -->
+            <div id="menu" class="centerContent"><!-- menu: start -->
+                <a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+                <p class="author">this site &copy; a maine guy studio. Last updated on <script>document.write(getLastUpdated());</script></p>
+                <p class = "reallySmallText"><a href="#" onClick="return openRick()">click me</a></p>
+            </div><!-- menu: end -->
+        </div><!-- footer: end -->
+    </div><!-- page: end -->
+</body>
+</html>

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#slideshow *
+		{
+			width:400px;
+			margin: auto;
+		}
+
+#slideshow input
+		{
+			width:50px;
+			display:inline;
+		}
+		
+	#d2, #d3, #d4, #d5, #d6, #d7
+		{
+			display:none;
+		}
+		
+	.slide img
+		{
+			max-width:100%;
+			max-height:70%;
+		}
+		
+	.slide
+		{
+			position:relative;
+			text-align:center;
+		}
+		
+	.caption
+		{
+			position:absolute;
+			bottom:4px;
+			width:70%;
+			min-height:15%;
+			background-color:black;
+			font-family: 'Iceland', serif;
+			font-size:1.5em;
+			color:white;
+			opacity:0.6;
+			filter:alpha(opacity=60);
+		}
+		
+	.formHolder
+		{
+			text-align:center;
+		}
+		
+	.slideButton		
+		{
+			line-height:10px;
+		}

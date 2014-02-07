@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Andrew's JavaScript Demo ~ Shopping Cart</title>
+
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Iceland|Special+Elite' rel='stylesheet' type='text/css'>
+
+<script src="scripts/last_update.js"></script>
+<script src="scripts/banner.js"></script>
+<script src="scripts/get_set_cookie.js"></script>
+<script src="scripts/displaySelected.js"></script>
+<script src="scripts/accordion_menu.js"></script>
+<script src="scripts/cookieBanner.js"></script>
+<script src="scripts/setBackground.js"></script>
+<script src="scripts/openRick.js"></script>
+<script src="scripts/cart.js"></script>
+
+<style>
+	.menu
+		{
+			display:none;
+			margin-left:15px;
+		}
+</style>
+
+<script>
+	
+	// bookShowing holds the name of the book <div> that is currently showing
+	var bookShowing = "book";
+	
+	function switchBook(theBook)
+	{
+		if(document.getElementById) {
+			var myBookShowing = document.getElementById(bookShowing);
+			myBookShowing.style.display = "none";
+			var myNewBook = document.getElementById(theBook);
+			myNewBook.style.display = "block";
+			bookShowing = theBook;
+			return true;
+		} else {
+			return false;
+		}
+	}
+		
+		
+	
+</script>
+</head>
+
+<body onLoad="changePic(); setCookieBanner(); setBackground()">
+	<div id="page"><!-- page: start -->
+    	<div id="container"><!-- container: start -->
+            <div id="banner" class="centerContent">
+            	<img src="images/header.png" alt="Andrew's JavaScript Demo" class="centerContent" />
+                <img src="images/banners/493049d121ad78baade552c415d94377ed5.gif" id="cookieBanner" name="cookieBanner">
+            </div>
+        	<div id="menu" class="centerContent"><!-- menu: start -->
+            	<a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+            </div><!-- menu: end -->
+        
+        
+        <div id="content"><!-- content: start -->
+            <div id="main"><!-- main: start -->
+            	<!-- Accordion menu gooes here -->
+                <div id="accordianMenu">
+                    <h4 class="cartText"><a  href="stay.html" onClick="return switchMenu('menu1')">HTML5</a></h4>
+                    <span class="menu" id="menu1">
+                        <ul class="cartText">
+                            <li><a href="#" onClick="return switchBook('book1')">HTML5: Up & Running</a></li>
+                            <li><a href="#" onClick="return switchBook('book2')">Introducing HTML5</a></li>
+                            <li><a href="#" onClick="return switchBook('book3')">HTML5 Canvas</a></li>
+                        </ul>
+                    </span>
+                    <h4 class="cartText"><a href="stay.html" onClick="return switchMenu('menu2')">CSS3</a></h4>
+                    <span class="menu" id="menu2">
+                        <ul class="cartText">
+                            <li><a href="#" onClick="return switchBook('book4')">The Book of CSS3</a></li>
+                            <li><a href="#" onClick="return switchBook('book5')">CSS The Missing Manual</a></li>
+                            <li><a href="#" onClick="return switchBook('book6')">CSS Pushing the Limits</a></li>
+                        </ul>
+                    </span>
+                    <h4 class="cartText"><a href="stay.html" onClick="return switchMenu('menu3')">JavaScript</a></h4>
+                    <span class="menu" id="menu3">
+                        <ul class="cartText">
+                            <li><a href="#" onClick="return switchBook('book7')">Javascript: The Good Parts</a></li>
+                            <li><a href="#" onClick="return switchBook('book8')">Functional Javascript</a></li>
+                            <li><a href="#" onClick="return switchBook('book9')">Testable Javascript</a></li>
+                        </ul>
+                    </span>
+                    <hr>
+                    <h4 class="cartText"><a href="#" onClick="viewCart()">View Cart</a></h4>
+                </div>
+                <div id="bookHolder">
+                    <div id="book">
+                        <h3 class="cartText">Web Development Books</h3>
+                        <p class="cartText">Book content from respective web sites.
+                        <br>Used under the Fair Use Principle for Educational Purposes Only.</p>
+                        <h3 class="=alert">No books are actually for sale!</h3>
+                        <p>GRADED ASSIGNMENT</p>
+                    </div>
+                    <div id="book1">
+                        <h3 class="cartText">HTML5: Up & Running</h3>
+                        <p class="cartText">Price: $17.99 <span class="addToCart"><a href="#" onClick="addToCart('0')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/html5up&running.gif" class="bookImg">
+                        <p class="cartText">HTML5 continues to evolve, browsers are implementating at break-neck speed and HTML5 web sites spring up like flowers after rain. More than ever, you need to get acquainted with the powerful new possibilities in web and application design. That’s why we’ve crafted a second edition of this book to help you stay on top of current developments.</p>
+                        <p class="cartText">This book shows you how to start adapting the language now to realize its benefits on today’s browsers. It concentrates on the practical—the problems HTML5 can solve for you right away. By following the book’s hands-on HTML5 code examples you’ll learn about all the new features found in HTML5</p>
+                    </div>
+                    <div id="book2">
+                        <h3 class="cartText">Introducing HTML5</h3>
+                        <p class="cartText">Price: $21.20 <span class="addToCart"><a href="#" onClick="addToCart('1')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/introhtml5.jpeg" class="bookImg">
+                        <p class="cartText">If you don't know about the new features available in HTML5, now's the time to find out. This book provides practical information about how and why the latest version of this markup language will significantly change the way you develop for the Web.</p>
+                        <p class="cartText">HTML5 is still evolving, yet browsers such as Safari, Mozilla, Opera, and Chrome already support many of its features -- and mobile browsers are even farther ahead. HTML5: Up & Running carefully guides you though the important changes in this version with lots of hands-on examples, including markup, graphics, and screenshots. You'll learn how to use HTML5 markup to add video, offline capabilities, and more -- and you’ll be able to put that functionality to work right away.</p>
+                    </div>
+                    <div id="book3">
+                        <h3 class="cartText">HTML5: Canvas</h3>
+                        <p class="cartText">Price: $28.97 <span class="addToCart"><a href="#" onClick="addToCart('2')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/html5canvas.gif" class="bookImg">
+                        <p class="cartText">No matter what platform or tools you use, the HTML5 revolution will soon change the way you build web applications, if it hasn't already. HTML5 is jam-packed with features, and there's a lot to learn. This book gets you started with the Canvas element, perhaps HTML5's most exciting feature. Learn how to build interactive multimedia applications using this element to draw, render text, manipulate images, and create animation.</p>
+                        <p class="cartText">Whether you currently use Flash, Silverlight, or just HTML and JavaScript, you'll quickly pick up the basics. Practical examples show you how to create various games and entertainment applications with Canvas as you learn. Gain valuable experience with HTML5, and discover why leading application developers rave about this specification as the future of truly innovative web development.</p>
+                    </div>
+                    <div id="book4">
+                        <h3 class="cartText">The Book of CSS3</h3>
+                        <p class="cartText">Price: $21.36 <span class="addToCart"><a href="#" onClick="addToCart('3')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/tbocss3.gif" class="bookImg">
+                        <p class="cartText">CSS3 is the technology behind most of the eye-catching visuals on the Web today, but the official documentation can be dry and hard to follow. Luckily, The Book of CSS3 distills the heady technical language of the CSS3 specification into plain English, so you can get started on your next project right away.</p>
+                        <p class="cartText">With real-world examples and a focus on results, The Book of CSS3 shows you how to transform ordinary text into stunning, richly detailed web pages fit for any browser. You'll master the latest cutting-edge CSS features, like multi-column layouts, borders and box effects, and new color and opacity settings. </p>
+                    </div>
+                    <div id="book5">
+                        <h3 class="cartText">CSS 3: The Missing Manual</h3>
+                        <p class="cartText">Price: $20.99 <span class="addToCart"><a href="#" onClick="addToCart('4')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/css3tmm.gif" class="bookImg">
+                        <p class="cartText">CSS3 lets you create professional-looking websites, but learning its finer points can be tricky—even for seasoned web developers. This Missing Manual shows you how to take your HTML and CSS skills to the next level, with valuable tips, tricks, and step-by-step instructions. You’ll quickly learn how to build web pages that look great and run fast on devices and screens of all sizes.</p>
+                    </div>
+                    <div id="book6">
+                        <h3 class="cartText">CSS3: Pushing the Limits</h3>
+                        <p class="cartText">Price: $30.62 <span class="addToCart"><a href="#" onClick="addToCart('5')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/css3ptl.jpg" class="bookImg">
+                        <p class="cartText">Representing an evolutionary leap forward for CSS, CSS3 is chock-full of new capabilities that dramatically expand the boundaries of what a styling language can do. But many of those new features remain undocumented, making it difficult to learn what they are and how to use them to create the sophisticated sites and web apps clients demand and users have grown to expect.</p>
+                    </div>
+                    <div id="book7">
+                        <h3 class="cartText">Javascript: The Good Parts</h3>
+                        <p class="cartText">Price: $17.99 <span class="addToCart"><a href="#" onClick="addToCart('6')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/jstgp.gif" class="bookImg">
+                        <p class="cartText">Most programming languages contain good and bad parts, but JavaScript has more than its share of the bad, having been developed and released in a hurry before it could be refined. This authoritative book scrapes away these bad features to reveal a subset of JavaScript that's more reliable, readable, and maintainable than the language as a whole-a subset you can use to create truly extensible and efficient code.</p>
+                        <p class="cartText">Considered the JavaScript expert by many people in the development community, author Douglas Crockford identifies the abundance of good ideas that make JavaScript an outstanding object-oriented programming language-ideas such as functions, loose typing, dynamic objects, and an expressive object literal notation. Unfortunately, these good ideas are mixed in with bad and downright awful ideas, like a programming model based on global variables. </p>
+                    </div>
+                    <div id="book8">
+                        <h3 class="cartText">Functional JavaScript</h3>
+                        <p class="cartText">Price: $20.24 <span class="addToCart"><a href="#" onClick="addToCart('7')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/functionaljs.gif" class="bookImg">
+                        <p class="cartText">How can you overcome JavaScript language oddities and unsafe features? With this book, you’ll learn how to create code that’s beautiful, safe, and simple to understand and test by using JavaScript’s functional programming support. Author Michael Fogus shows you how to apply functional-style concepts with Underscore.js, a JavaScript library that facilitates functional programming techniques. Sample code for examples is available on GitHub.</p>
+                        <p class="cartText">Fogus helps you think in a functional way to help you minimize complexity in the programs you build. If you’re a JavaScript programmer hoping to learn functional programming techniques, or a functional programmer looking to learn JavaScript, this book is the ideal introduction.</p>
+                    </div>
+                    <div id="book9">
+                        <h3 class="cartText">Testable Javscript</h3>
+                        <p class="cartText">Price: $19.98 <span class="addToCart"><a href="#" onClick="addToCart('8')">Add to Cart</a> | </span>
+                        <span class="addToCart"><a href="#" onClick="removeFromCart('0')">Remove From Cart</a></span></p>
+                        <img src="images/books/testablejs.gif" class="bookImg">
+                        <p class="cartText">One skill that’s essential for any professional JavaScript developer is the ability to write testable code. This book shows you what writing and maintaining testable JavaScript for the client- or server-side actually entails, whether you’re creating a new application or rewriting legacy code.</p>
+                        <p class="cartText">From methods to reduce code complexity to unit testing, code coverage, debugging, and automation, you’ll learn a holistic approach for writing JavaScript code that you and your colleagues can easily fix and maintain going forward. Testing JavaScript code is complicated. This book helps you simply the process considerably.</p>
+                    </div>
+            	</div>
+            </div><!-- main: end -->
+            <div id="right"><!-- right: start-->
+            	<div id="badge">
+                    <h2 class="centerContent">Made With</h2>
+                    <p class="centerContent">
+                        <a href="#" onClick="changeURL()">
+                            <img src="images/html5.png" name="Banner" id="bannerImage" width="30%">
+                        </a>
+                    </p>
+                </div><!-- badge: end --><div id="selectFormDiv">
+                        <form name="backgroundForm">
+                            <select name="backgroundSelect" onChange="displaySelected()">
+                                <option value="0">Choose Background</option>
+                                <option value="1">Desert</option>
+                                <option value="2">Mountain</option>
+                                <option value="3">Ocean</option>
+                                <option value="4">Road</option>
+                            </select>
+                        </form>
+                    </p>
+                </div><!-- end selectFormDiv --> 
+            </div><!-- right: end -->
+        </div><!-- content: end -->
+        <!--<div class="push"></div>ends wrapper (created for sticky footer) -->
+        <div id="footer"><!-- footer: start -->
+            <div id="menu" class="centerContent"><!-- menu: start -->
+                <a title="Home" href="index.html"><div class="navItem">Home</div></a>
+                <a title="Forms" href="forms.html"><div class="navItem">Forms</div></a>
+                <a title="Date & Time" href="dates.html"><div class="navItem">Date & Time</div></a>
+                <a title="Slideshow" href="slideshow.html"><div class="navItem">Slideshow</div></a>
+                <a title="Shopping Cart" href="cart.html"><div class="navItem">Shopping Cart</div></a>
+                <p class="author">this site &copy; a maine guy studio. Last updated on <script>document.write(getLastUpdated());</script></p>
+                <p class = "reallySmallText"><a href="#" onClick="return openRick()">click me</a></p>
+            </div><!-- menu: end -->
+        </div><!-- footer: end -->
+    </div><!-- page: end -->
+</body>
+</html>

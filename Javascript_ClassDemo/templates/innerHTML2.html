@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script>
+
+	function modify() {
+		fullName = document.getElementById('txt_fullname').value;
+		document.getElementById('emphasize').innerHTML = fullName;
+		document.getElementById('pwelcome').style.display='block';
+		document.getElementById('welcomeForm').style.display='none';
+	}
+
+</script>
+
+</head>
+
+<body>
+	<p id="pwelcome" style="display:none">Thank you, <em id="emphasize">Customer</em>, for visiting our website.</p>
+    <form name="welcome" id="welcomeForm">
+    	<p>Please enter your name: <input type="text" name="fullname" id="txt_fullname" size="40"></p>
+        <p><input type="button" name="Modify" value="Modify" onClick="modify()"></p>
+    </form>
+    
+</body>
+</html>

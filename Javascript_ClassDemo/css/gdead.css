@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* reset padding and margin values in all browsers */
+* 
+	{
+		margin:0;
+		padding:0;
+	}
+	
+html, body
+	{
+		height:100%;
+		background-color:#000;
+		color:#E6FF91;
+	}
+	
+#page
+	{
+		width:1000px;
+		min-height:97.5%;
+		height:auto !important;
+		height:97.5%;
+		margin:0 auto -32px; /* must add +7 from the size of the footer */
+		/*background-color:#FFF;
+		border:solid thick rgb(7, 19, 83); /*dark blue shade from English flag */
+		padding-top:10px; /* for header image */
+	}
+
+#menu
+	{
+		padding-top:10px;
+		font-size:24px;
+		font-family: condiment, sans-serif;
+		padding-bottom:5px;
+	}
+
+#content
+	{
+		margin-top:15px;
+		width:1000px;
+		padding-left:10px;
+		padding-right:10px;
+		clear:both;
+	}
+	
+#main
+	{
+		width:610px;
+		float:left;
+		padding-top:10px;
+	}
+
+#rSidebar
+	{
+		width:350px;
+		float:left;
+		padding-top:10px;
+		padding-left:10px;
+		z-index:899;
+	}
+
+#countdown 
+	{
+		width:325px;
+		height:218px;
+		line-height:400px;
+		text-align:center;
+		font-family:Book Antiqua;
+		font-size:18px;
+		font-weight:bold;
+		margin-bottom:25px;
+		background-image:url(../images/plane.jpg);
+	}
+	
+#londonTime
+	{
+		width:325px;
+		height:276px;
+		background-image:url(../images/half_ben.jpg);
+		margin-bottom:25px;
+	}
+	
+.push
+	{
+		clear:both;
+		height:150px;
+	}
+
+.centerContent
+	{
+		text-align:center;
+	}
+	
+.navItem
+	{
+		width:160px;
+		float:left;
+	}
+
+input.londonTime
+	{
+		width:250px;
+		display:block;
+		float:right;
+		margin-top:250px;
+	}
+	
+a:link
+	{
+		font-size:24px;
+		text-decoration:none;
+		color:#4169E1;
+	}
+	
+a:visited
+	{
+		
+		text-decoration:none;
+		color:rgb(233,8,12);
+	}
+	
+a:hover
+	{
+		color:rgb(164,11,11);
+	}
+	
+header
+	{
+		text-align:center;
+		font-size:72px;
+		letter-spacing:15px;
+		font-family: strumpf-std, sans-serif;
+	}
+	
+footer
+	{
+		height:25px;
+		width:1000px;
+		font-family:'Book Antiqua';
+		text-align:center;
+		font-weight:bold;
+		font-size:16px;
+		border:solid 3px rgb(7,19,83);
+		margin:auto;
+		line-height:25px;
+	}

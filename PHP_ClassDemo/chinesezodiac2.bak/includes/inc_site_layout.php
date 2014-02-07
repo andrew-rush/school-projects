@@ -1,0 +1,5 @@
+<div>
+    <p>A Dynamic Web Template is an HTML-based master copy of a web page that you can create to contain settings, formatting, and page elements such as text, graphics, page layout, styles, and regions of a web page that can be modified. When you use Dynamic Web Templates in a website, that template defines the layout for those pages. You can use one or more Dynamic Web Templates in a given website, and you can use each Dynamic Web Template with as many pages as you like.</p>
+    
+    <p>By using Dynamic Web Templates, you can create web pages that share the same layout. In addition to providing a shared layout, you can make some regions in a template available for editing without affecting other regions in the template. This means that you can allow others to add and edit content on the site, without effecting their changes blowing out the layout of individual pages and the template itself.</p>
+</div>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script>
+	
+	function validateForm() {
+		var name = document.getElementById('text_fullname').value;
+		var error_flag=false;	
+		if(name == "")
+		{
+			error_message = 'Name: Please enter your name\n';
+			document.getElementById('text_fullname').style.backgroundColor='red';
+			error_flag = true;
+		} else {
+			var validated_name = 'Name: ' + name + '\n';
+			document.getElementById('text_fullname').style.backgroundColor='white';
+		}
+		
+		if(error_flag)
+		{
+			alert(error_message);
+		} else {
+			alert(validated_name);
+		}
+	}
+
+</script>
+
+</head>
+
+<body>
+
+	<form name="demo1">
+    	<p>
+        	<label for="txt_name">Full Name:</label><input type="text" name="fullname" id="text_fullname">
+        	<input type="button" name="submit" id="btn_submit" value="Submit" onClick="validateForm()">
+        </p>
+    </form>
+</body>
+</html>
